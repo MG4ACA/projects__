@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eBay Product Description — Camping Hammock</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background-color: #f4f7f4;
+        color: #1a2e1a;
+        max-width: 100%;
+        margin: 0;
+      }
+
+      /* ── HERO BANNER ── */
+      .hero {
+        background: linear-gradient(135deg, #1a3d1a 0%, #2d6a2d 65%, #3a8a3a 100%);
+        padding: 32px 28px 26px;
+        text-align: center;
+        border-bottom: 4px solid #5abf5a;
+      }
+      .hero-tag {
+        display: inline-block;
+        background: #5abf5a;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 4px 16px;
+        border-radius: 20px;
+        margin-bottom: 14px;
+      }
+      .hero h1 {
+        font-size: 26px;
+        font-weight: 800;
+        color: #ffffff;
+        line-height: 1.3;
+        margin-bottom: 10px;
+      }
+      .hero h1 span {
+        color: #a8e6a8;
+      }
+      .hero p {
+        font-size: 14px;
+        color: #c8e6c8;
+        max-width: 520px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      /* ── BADGES ROW ── */
+      .badges {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 20px 20px 16px;
+        background: #fff;
+        border-bottom: 1px solid #e0ece0;
+      }
+      .badge {
+        background: #f0f8f0;
+        border: 2px solid #2d6a2d;
+        border-radius: 10px;
+        padding: 10px 18px;
+        text-align: center;
+        font-size: 12px;
+        color: #2d6a2d;
+        min-width: 110px;
+      }
+      .badge strong {
+        display: block;
+        font-size: 17px;
+        color: #1a3d1a;
+        font-weight: 800;
+        margin-bottom: 2px;
+      }
+
+      /* ── SECTIONS ── */
+      .section {
+        background: #fff;
+        padding: 24px 28px;
+        border-top: 1px solid #e0ece0;
+      }
+      .section-title {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: #2d6a2d;
+        margin-bottom: 16px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #a8e6a8;
+      }
+
+      /* ── FEATURES GRID ── */
+      .features-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .feature-item {
+        background: #f0f8f0;
+        border-left: 4px solid #2d6a2d;
+        border-radius: 0 8px 8px 0;
+        padding: 14px 14px;
+        transition: transform 0.15s;
+      }
+      .feature-item:hover {
+        transform: translateX(3px);
+      }
+      .feature-item .fi-icon {
+        font-size: 22px;
+        margin-bottom: 7px;
+      }
+      .feature-item .fi-title {
+        font-size: 13px;
+        font-weight: 700;
+        color: #1a3d1a;
+        margin-bottom: 4px;
+      }
+      .feature-item .fi-desc {
+        font-size: 12px;
+        color: #4a6a4a;
+        line-height: 1.5;
+      }
+
+      /* ── SPECS TABLE ── */
+      .specs-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+      .specs-table tr {
+        border-bottom: 1px solid #e0ece0;
+      }
+      .specs-table tr:nth-child(even) {
+        background: #f7fbf7;
+      }
+      .specs-table tr:last-child {
+        border-bottom: none;
+      }
+      .specs-table td {
+        padding: 11px 10px;
+        color: #2a3a2a;
+      }
+      .specs-table td:first-child {
+        font-weight: 600;
+        color: #2d6a2d;
+        width: 44%;
+      }
+      .specs-highlight {
+        background: #e6f5e6 !important;
+        font-weight: 600;
+      }
+
+      /* ── WHAT'S IN THE BOX ── */
+      .box-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      .box-item {
+        background: #f0f8f0;
+        border: 1px solid #a8d8a8;
+        border-radius: 8px;
+        padding: 12px 10px;
+        text-align: center;
+        font-size: 12px;
+        color: #1a3d1a;
+        font-weight: 600;
+      }
+      .box-item .box-icon {
+        font-size: 22px;
+        margin-bottom: 5px;
+      }
+
+      /* ── COLORS ── */
+      .colors-row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .color-chip {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: #2a3a2a;
+        background: #f7fbf7;
+        border: 1px solid #c0dcc0;
+        border-radius: 20px;
+        padding: 6px 14px;
+      }
+      .color-dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 1px solid #aaa;
+      }
+
+      /* ── WHY BUY ── */
+      .why-list {
+        list-style: none;
+      }
+      .why-list li {
+        padding: 10px 0 10px 28px;
+        border-bottom: 1px solid #e0ece0;
+        font-size: 13px;
+        color: #2a3a2a;
+        position: relative;
+        line-height: 1.6;
+      }
+      .why-list li:last-child {
+        border-bottom: none;
+      }
+      .why-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        top: 10px;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        background: #2d6a2d;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 18px;
+      }
+
+      /* ── SHIPPING BANNER ── */
+      .shipping-banner {
+        background: linear-gradient(90deg, #1a3d1a, #2d6a2d);
+        padding: 22px 28px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+      }
+      .ship-item {
+        text-align: center;
+        font-size: 11px;
+        color: #c8e6c8;
+        padding: 10px 6px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+      }
+      .ship-item .ship-icon {
+        font-size: 26px;
+        margin-bottom: 6px;
+      }
+      .ship-item strong {
+        display: block;
+        font-size: 12px;
+        color: #fff;
+        margin-bottom: 3px;
+        font-weight: 700;
+      }
+
+      /* ── GUARANTEE FOOTER ── */
+      .guarantee {
+        background: #f0f8f0;
+        padding: 22px 28px;
+        text-align: center;
+        border-top: 3px solid #2d6a2d;
+      }
+      .guarantee-badges {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 14px;
+      }
+      .g-badge {
+        font-size: 12px;
+        color: #2d6a2d;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .guarantee p {
+        font-size: 12px;
+        color: #4a6a4a;
+        line-height: 1.7;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .guarantee p strong {
+        color: #1a3d1a;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ── HERO ── -->
+    <div class="hero">
+      <div class="hero-tag">Spring / Summer 2026 — Top Seller</div>
+      <h1>
+        2 Person Camping Hammock
+        <br />
+        <span>with Mosquito Net</span>
+      </h1>
+      <p>
+        210T Parachute Nylon · 600 lbs Rated · Built-in Mosquito Net Included
+        <br />
+        Hang anywhere. Sleep bug-free. Set up in under 3 minutes.
+      </p>
+    </div>
+
+    <!-- ── KEY BADGES ── -->
+    <div class="badges">
+      <div class="badge">
+        <strong>600 lbs</strong>
+        Max Load
+      </div>
+      <div class="badge">
+        <strong>210T Nylon</strong>
+        Parachute Grade
+      </div>
+      <div class="badge">
+        <strong>2 Person</strong>
+        Capacity
+      </div>
+      <div class="badge">
+        <strong>Mosquito Net</strong>
+        Included
+      </div>
+      <div class="badge">
+        <strong>3–7 Days</strong>
+        US Delivery
+      </div>
+    </div>
+
+    <!-- ── KEY FEATURES ── -->
+    <div class="section">
+      <div class="section-title">Key Features</div>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="fi-icon">🦟</div>
+          <div class="fi-title">Dense Mosquito Net</div>
+          <div class="fi-desc">
+            Double-sided zipper nylon net — full protection from mosquitoes and insects
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="fi-icon">💪</div>
+          <div class="fi-title">600 lbs Load Bearing</div>
+          <div class="fi-desc">
+            High-grade 210T parachute nylon — skin-friendly, tear-proof, rock solid
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="fi-icon">🌿</div>
+          <div class="fi-title">Fits 2 People Comfortably</div>
+          <div class="fi-desc">
+            102" × 55" unfolded — spacious enough for couples or camping buddies
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="fi-icon">⚡</div>
+          <div class="fi-title">3-Minute Setup</div>
+          <div class="fi-desc">
+            2 carabiners + 2 ropes + 2 tree straps included — hang between any trees
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="fi-icon">🎒</div>
+          <div class="fi-title">Ultra Compact Storage</div>
+          <div class="fi-desc">
+            Integrated carry bag folds to 9.06" × 7.09" × 4.33" — fits in any backpack
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="fi-icon">🏕️</div>
+          <div class="fi-title">Versatile All-Season Use</div>
+          <div class="fi-desc">
+            Hiking, camping, beach, backyard, garden, travel — works everywhere
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SPECS ── -->
+    <div class="section">
+      <div class="section-title">Specifications</div>
+      <table class="specs-table">
+        <tr>
+          <td>Product Type</td>
+          <td>Camping Hammock</td>
+        </tr>
+        <tr>
+          <td>Material</td>
+          <td>210T Parachute Nylon Fabric</td>
+        </tr>
+        <tr class="specs-highlight">
+          <td>Load Capacity</td>
+          <td>Approx. 600 lbs (272 kg)</td>
+        </tr>
+        <tr>
+          <td>Unfolded Size</td>
+          <td>260 cm × 140 cm / 102" × 55" (L × W)</td>
+        </tr>
+        <tr>
+          <td>Folded / Packed Size</td>
+          <td>23 cm × 18 cm × 11 cm / 9.06" × 7.09" × 4.33"</td>
+        </tr>
+        <tr>
+          <td>Item Weight</td>
+          <td>753 g / 1.66 lbs</td>
+        </tr>
+        <tr>
+          <td>Package Weight</td>
+          <td>807 g / 1.78 lbs</td>
+        </tr>
+        <tr>
+          <td>Package Size</td>
+          <td>25 × 19 × 9 cm / 9.84" × 7.48" × 3.54"</td>
+        </tr>
+        <tr class="specs-highlight">
+          <td>Mosquito Net</td>
+          <td>Included — Double-Sided Zipper</td>
+        </tr>
+        <tr>
+          <td>Capacity</td>
+          <td>2 Person</td>
+        </tr>
+        <tr>
+          <td>Condition</td>
+          <td>Brand New</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ── AVAILABLE COLORS ── -->
+    <div class="section">
+      <div class="section-title">Available Colors</div>
+      <div class="colors-row">
+        <div class="color-chip">
+          <span
+            class="color-dot"
+            style="background: linear-gradient(135deg, #4a5a30, #8a9a60, #3a4a20)"
+          ></span>
+          Camouflage
+        </div>
+        <div class="color-chip">
+          <span
+            class="color-dot"
+            style="background: linear-gradient(135deg, #aaaaaa, #4a7aaa)"
+          ></span>
+          Gray &amp; Blue
+        </div>
+      </div>
+    </div>
+
+    <!-- ── WHAT'S IN THE BOX ── -->
+    <div class="section">
+      <div class="section-title">What's in the Box</div>
+      <div class="box-grid">
+        <div class="box-item">
+          <div class="box-icon">🛏️</div>
+          1× Hammock
+        </div>
+        <div class="box-item">
+          <div class="box-icon">🦟</div>
+          1× Mosquito Net
+        </div>
+        <div class="box-item">
+          <div class="box-icon">🎒</div>
+          1× Carry Bag
+        </div>
+        <div class="box-item">
+          <div class="box-icon">🪢</div>
+          2× Nylon Ropes
+        </div>
+        <div class="box-item">
+          <div class="box-icon">🌳</div>
+          2× Tree Straps
+        </div>
+        <div class="box-item">
+          <div class="box-icon">🔗</div>
+          2× Steel Carabiners
+        </div>
+      </div>
+    </div>
+
+    <!-- ── WHY BUY ── -->
+    <div class="section">
+      <div class="section-title">Why This Hammock Stands Out</div>
+      <ul class="why-list">
+        <li>
+          <strong>Mosquito net included at no extra cost</strong>
+          — most hammocks at this price don't include one, saving you $15–$25 on a separate
+          purchase.
+        </li>
+        <li>
+          <strong>600 lbs parachute-grade nylon</strong>
+          — nearly double the rating of budget alternatives. Built for real outdoor use, not just
+          backyard lounging.
+        </li>
+        <li>
+          <strong>Everything you need in one box</strong>
+          — ropes, straps, and carabiners included. No extra hardware to hunt down.
+        </li>
+        <li>
+          <strong>Ships from a US warehouse</strong>
+          — no weeks-long overseas waits, no customs surprises. Arrives in 3–7 business days.
+        </li>
+        <li>
+          <strong>5 color options</strong>
+          — camouflage, army green, dark blue, light blue, or gray &amp; blue. Great gift for any
+          outdoor lover.
+        </li>
+      </ul>
+    </div>
+
+    <!-- ── SHIPPING ── -->
+    <div class="shipping-banner">
+      <div class="ship-item">
+        <div class="ship-icon">🏭</div>
+        <strong>Ships from US</strong>
+        No customs delays
+      </div>
+      <div class="ship-item">
+        <div class="ship-icon">📦</div>
+        <strong>3–7 Business Days</strong>
+        Fast tracked delivery
+      </div>
+      <div class="ship-item">
+        <div class="ship-icon">🔄</div>
+        <strong>30-Day Returns</strong>
+        Hassle-free policy
+      </div>
+      <div class="ship-item">
+        <div class="ship-icon">💬</div>
+        <strong>24hr Support</strong>
+        Message us anytime
+      </div>
+    </div>
+
+    <!-- ── GUARANTEE ── -->
+    <div class="guarantee">
+      <div class="guarantee-badges">
+        <div class="g-badge">✅ 100% Authentic Product</div>
+        <div class="g-badge">🔒 Secure Checkout</div>
+        <div class="g-badge">↩️ 30-Day Money Back</div>
+      </div>
+      <p>
+        <strong>100% Satisfaction Guaranteed.</strong>
+        <br />
+        Not happy with your purchase? Contact us within 30 days and we'll make it right — no
+        questions asked. We're committed to providing quality outdoor gear and outstanding service
+        every time.
+      </p>
+    </div>
+
+    <!-- ── PRODUCT IMAGES ── -->
+    <div style="background: #fff; padding: 22px 28px; border-top: 3px solid #2d6a2d">
+      <div
+        style="
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 2.5px;
+          text-transform: uppercase;
+          color: #2d6a2d;
+          margin-bottom: 16px;
+          padding-bottom: 8px;
+          border-bottom: 2px solid #a8e6a8;
+        "
+      >
+        Product Images
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px">
+        <img
+          src="https://cf.cjdropshipping.com/48911fa6-c43a-45cb-b307-a4c6e71ea249.jpg"
+          alt="2 Person Camping Hammock with Mosquito Net"
+          style="width: 100%; border-radius: 8px; border: 2px solid #e0ece0; display: block"
+        />
+        <img
+          src="https://cf.cjdropshipping.com/cf58f8f0-97fb-43e6-a4c6-6cf3c564ff2a.jpg"
+          alt="Hammock with mosquito net deployed"
+          style="width: 100%; border-radius: 8px; border: 2px solid #e0ece0; display: block"
+        />
+        <img
+          src="https://cf.cjdropshipping.com/b1eaeeb6-dc31-4b71-abfb-9780bd56cc6d.jpg"
+          alt="Hammock packed in carry bag"
+          style="width: 100%; border-radius: 8px; border: 2px solid #e0ece0; display: block"
+        />
+        <img
+          src="https://cf.cjdropshipping.com/68684d26-4f28-4b13-852b-2bf436389c31.jpg"
+          alt="Hammock accessories included"
+          style="width: 100%; border-radius: 8px; border: 2px solid #e0ece0; display: block"
+        />
+        <img
+          src="https://cf.cjdropshipping.com/a7f5e52b-04f0-4608-9401-853bb23e066b.jpg"
+          alt="Hammock in use outdoors"
+          style="
+            width: 100%;
+            border-radius: 8px;
+            border: 2px solid #e0ece0;
+            display: block;
+            grid-column: span 2;
+          "
+        />
+      </div>
+    </div>
+  </body>
+</html>
