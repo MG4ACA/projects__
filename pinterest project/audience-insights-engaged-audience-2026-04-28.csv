@@ -1,0 +1,171 @@
+Audience View,Date,Aggregation,Audience Size
+Your engaged audience,2026-04-28,Monthly,10000
+
+Interests
+Category,Bulk Sheet Category,Percent of audience,Affinity,Interest,Bulk Sheet Interests,Percent of audience,Affinity
+Home Decor,"{'name': 'Home Decor', 'id': '935249274030'}",0.82,1.177,Home Decor Style,"{'name': 'Home Decor Style', 'id': '932406387708'}",0.906,1.737
+Home Decor,"{'name': 'Home Decor', 'id': '935249274030'}",0.82,1.177,Room Decor,"{'name': 'Room Decor', 'id': '916836567854'}",0.9,1.258
+Home Decor,"{'name': 'Home Decor', 'id': '935249274030'}",0.82,1.177,Wall,"{'name': 'Wall', 'id': '897028410084'}",0.848,0.954
+Home Decor,"{'name': 'Home Decor', 'id': '935249274030'}",0.82,1.177,Furniture,"{'name': 'Furniture', 'id': '936760250909'}",0.742,2.244
+Home Decor,"{'name': 'Home Decor', 'id': '935249274030'}",0.82,1.177,Lighting,"{'name': 'Lighting', 'id': '898155178413'}",0.714,1.847
+Home Decor,"{'name': 'Home Decor', 'id': '935249274030'}",0.82,1.177,Home Maintenance,"{'name': 'Home Maintenance', 'id': '951174617998'}",0.608,2.919
+Home Decor,"{'name': 'Home Decor', 'id': '935249274030'}",0.82,1.177,Storage and Organization,"{'name': 'Storage and Organization', 'id': '896864884493'}",0.578,1.547
+Home Decor,"{'name': 'Home Decor', 'id': '935249274030'}",0.82,1.177,Flooring,"{'name': 'Flooring', 'id': '951285123313'}",0.447,1.629
+Home Decor,"{'name': 'Home Decor', 'id': '935249274030'}",0.82,1.177,Home Accessories,"{'name': 'Home Accessories', 'id': '946284018351'}",0.444,1.182
+Home Decor,"{'name': 'Home Decor', 'id': '935249274030'}",0.82,1.177,Door,"{'name': 'Door', 'id': '936029585073'}",0.404,4.719
+Home Decor,"{'name': 'Home Decor', 'id': '935249274030'}",0.82,1.177,Exterior,"{'name': 'Exterior', 'id': '929735873274'}",0.301,4.441
+Home Decor,"{'name': 'Home Decor', 'id': '935249274030'}",0.82,1.177,Entrance,"{'name': 'Entrance', 'id': '897843420737'}",0.109,4.054
+Home Decor,"{'name': 'Home Decor', 'id': '935249274030'}",0.82,1.177,Remodel,"{'name': 'Remodel', 'id': '953913251789'}",0.106,2.743
+Home Decor,"{'name': 'Home Decor', 'id': '935249274030'}",0.82,1.177,Stairs,"{'name': 'Stairs', 'id': '896462765850'}",0.091,3.291
+Art,"{'name': 'Art', 'id': '961238559656'}",0.803,1.122,Drawing,"{'name': 'Drawing', 'id': '918644201389'}",0.804,1.079
+Art,"{'name': 'Art', 'id': '961238559656'}",0.803,1.122,Painting,"{'name': 'Painting', 'id': '938071044570'}",0.783,1.184
+Art,"{'name': 'Art', 'id': '961238559656'}",0.803,1.122,Photography,"{'name': 'Photography', 'id': '905860166503'}",0.739,0.973
+Art,"{'name': 'Art', 'id': '961238559656'}",0.803,1.122,Street Art,"{'name': 'Street Art', 'id': '946028385883'}",0.699,1.412
+Art,"{'name': 'Art', 'id': '961238559656'}",0.803,1.122,Illustration,"{'name': 'Illustration', 'id': '907002707958'}",0.382,1.069
+Art,"{'name': 'Art', 'id': '961238559656'}",0.803,1.122,Body Art,"{'name': 'Body Art', 'id': '909337506117'}",0.379,0.963
+Art,"{'name': 'Art', 'id': '961238559656'}",0.803,1.122,Art Supplies,"{'name': 'Art Supplies', 'id': '916574447637'}",0.161,0.521
+Art,"{'name': 'Art', 'id': '961238559656'}",0.803,1.122,Metal Art,"{'name': 'Metal Art', 'id': '919147346069'}",0.161,5.935
+Art,"{'name': 'Art', 'id': '961238559656'}",0.803,1.122,Digital Art,"{'name': 'Digital Art', 'id': '954299039771'}",0.146,0.838
+Art,"{'name': 'Art', 'id': '961238559656'}",0.803,1.122,Art Tutorial,"{'name': 'Art Tutorial', 'id': '908625431820'}",0.14,0.423
+Art,"{'name': 'Art', 'id': '961238559656'}",0.803,1.122,Poster Design,"{'name': 'Poster Design', 'id': '947703397050'}",0.081,1.691
+Design,"{'name': 'Design', 'id': '902065567321'}",0.778,1.223,Web and App Design,"{'name': 'Web and App Design', 'id': '939992763802'}",0.516,0.763
+Design,"{'name': 'Design', 'id': '902065567321'}",0.778,1.223,Logo and Identity Design,"{'name': 'Logo and Identity Design', 'id': '909466174311'}",0.455,1.292
+Design,"{'name': 'Design', 'id': '902065567321'}",0.778,1.223,Business and Advertising Design,"{'name': 'Business and Advertising Design', 'id': '897856923844'}",0.272,1.595
+Education,"{'name': 'Education', 'id': '922134410098'}",0.768,1.2,Subjects,"{'name': 'Subjects', 'id': '955838913612'}",0.974,1.043
+Education,"{'name': 'Education', 'id': '922134410098'}",0.768,1.2,Career,"{'name': 'Career', 'id': '941720221932'}",0.214,1.64
+Education,"{'name': 'Education', 'id': '922134410098'}",0.768,1.2,Teacher Resources,"{'name': 'Teacher Resources', 'id': '920023336761'}",0.136,0.785
+Education,"{'name': 'Education', 'id': '922134410098'}",0.768,1.2,Education Level,"{'name': 'Education Level', 'id': '953977921048'}",0.133,0.819
+Entertainment,"{'name': 'Entertainment', 'id': '953061268473'}",0.766,1.104,Humor,"{'name': 'Humor', 'id': '898037969690'}",0.704,0.895
+Entertainment,"{'name': 'Entertainment', 'id': '953061268473'}",0.766,1.104,Movie,"{'name': 'Movie', 'id': '960342948658'}",0.681,0.891
+Entertainment,"{'name': 'Entertainment', 'id': '953061268473'}",0.766,1.104,Comics,"{'name': 'Comics', 'id': '930494031304'}",0.648,0.858
+Entertainment,"{'name': 'Entertainment', 'id': '953061268473'}",0.766,1.104,Gaming,"{'name': 'Gaming', 'id': '919269892222'}",0.485,1.114
+Entertainment,"{'name': 'Entertainment', 'id': '953061268473'}",0.766,1.104,Celebrities,"{'name': 'Celebrities', 'id': '911373384406'}",0.391,0.911
+Entertainment,"{'name': 'Entertainment', 'id': '953061268473'}",0.766,1.104,Music,"{'name': 'Music', 'id': '936111947007'}",0.368,0.748
+Entertainment,"{'name': 'Entertainment', 'id': '953061268473'}",0.766,1.104,Book,"{'name': 'Book', 'id': '908410600882'}",0.107,0.628
+Entertainment,"{'name': 'Entertainment', 'id': '953061268473'}",0.766,1.104,TV Show,"{'name': 'TV Show', 'id': '908565964114'}",0.107,0.598
+DIY and Crafts,"{'name': 'DIY and Crafts', 'id': '934876475639'}",0.761,1.294,Fabric Crafts,"{'name': 'Fabric Crafts', 'id': '909430966917'}",0.498,0.838
+DIY and Crafts,"{'name': 'DIY and Crafts', 'id': '934876475639'}",0.761,1.294,DIY Projects,"{'name': 'DIY Projects', 'id': '894309586150'}",0.495,0.93
+DIY and Crafts,"{'name': 'DIY and Crafts', 'id': '934876475639'}",0.761,1.294,Woodworking,"{'name': 'Woodworking', 'id': '899049071324'}",0.485,4.482
+DIY and Crafts,"{'name': 'DIY and Crafts', 'id': '934876475639'}",0.761,1.294,DIY Techniques and Supplies,"{'name': 'DIY Techniques and Supplies', 'id': '911900736333'}",0.18,1.169
+DIY and Crafts,"{'name': 'DIY and Crafts', 'id': '934876475639'}",0.761,1.294,DIY Stationery,"{'name': 'DIY Stationery', 'id': '902014579881'}",0.134,0.567
+DIY and Crafts,"{'name': 'DIY and Crafts', 'id': '934876475639'}",0.761,1.294,DIY Pottery,"{'name': 'DIY Pottery', 'id': '929616292607'}",0.111,2.023
+DIY and Crafts,"{'name': 'DIY and Crafts', 'id': '934876475639'}",0.761,1.294,DIY Event,"{'name': 'DIY Event', 'id': '922120925682'}",0.111,0.575
+DIY and Crafts,"{'name': 'DIY and Crafts', 'id': '934876475639'}",0.761,1.294,DIY Home and Decorations,"{'name': 'DIY Home and Decorations', 'id': '947657535178'}",0.092,0.87
+DIY and Crafts,"{'name': 'DIY and Crafts', 'id': '934876475639'}",0.761,1.294,DIY Bag and Purse,"{'name': 'DIY Bag and Purse', 'id': '954200326838'}",0.092,1.462
+DIY and Crafts,"{'name': 'DIY and Crafts', 'id': '934876475639'}",0.761,1.294,Polymer Crafts,"{'name': 'Polymer Crafts', 'id': '946907157789'}",0.089,1.927
+Architecture,"{'name': 'Architecture', 'id': '918105274631'}",0.718,2.058,Residential Architecture,"{'name': 'Residential Architecture', 'id': '917763335785'}",0.604,1.931
+Architecture,"{'name': 'Architecture', 'id': '918105274631'}",0.718,2.058,Landscape and Urbanism Architecture,"{'name': 'Landscape and Urbanism Architecture', 'id': '924770706928'}",0.576,2.55
+Architecture,"{'name': 'Architecture', 'id': '918105274631'}",0.718,2.058,Architectural Style,"{'name': 'Architectural Style', 'id': '908797015303'}",0.497,0.745
+Architecture,"{'name': 'Architecture', 'id': '918105274631'}",0.718,2.058,Commercial and Office Architecture,"{'name': 'Commercial and Office Architecture', 'id': '958567870080'}",0.309,1.697
+Architecture,"{'name': 'Architecture', 'id': '918105274631'}",0.718,2.058,Educational Architecture,"{'name': 'Educational Architecture', 'id': '916646672676'}",0.097,3.567
+Travel,"{'name': 'Travel', 'id': '908182459161'}",0.718,1.324,Travel Destinations,"{'name': 'Travel Destinations', 'id': '958862518888'}",0.976,1.036
+Travel,"{'name': 'Travel', 'id': '908182459161'}",0.718,1.324,Travel Ideas,"{'name': 'Travel Ideas', 'id': '904309328219'}",0.625,1.172
+Health,"{'name': 'Health', 'id': '898620064290'}",0.711,1.222,Diet and Nutrition,"{'name': 'Diet and Nutrition', 'id': '899102674037'}",0.558,0.858
+Health,"{'name': 'Health', 'id': '898620064290'}",0.711,1.222,Lifestyle,"{'name': 'Lifestyle', 'id': '916100312986'}",0.309,0.694
+Health,"{'name': 'Health', 'id': '898620064290'}",0.711,1.222,Medical,"{'name': 'Medical', 'id': '912753135383'}",0.193,2.154
+Sport,"{'name': 'Sport', 'id': '919812032692'}",0.701,1.444,Fitness and Exercises,"{'name': 'Fitness and Exercises', 'id': '912503731943'}",0.562,1.273
+Sport,"{'name': 'Sport', 'id': '919812032692'}",0.701,1.444,Outdoor Sport,"{'name': 'Outdoor Sport', 'id': '899504507492'}",0.555,2.342
+Sport,"{'name': 'Sport', 'id': '919812032692'}",0.701,1.444,Cycling,"{'name': 'Cycling', 'id': '932527952341'}",0.221,5.193
+Sport,"{'name': 'Sport', 'id': '919812032692'}",0.701,1.444,Dancing,"{'name': 'Dancing', 'id': '952036629213'}",0.196,0.663
+Sport,"{'name': 'Sport', 'id': '919812032692'}",0.701,1.444,Soccer,"{'name': 'Soccer', 'id': '916147467802'}",0.167,0.859
+Food and Drinks,"{'name': 'Food and Drinks', 'id': '918530398158'}",0.688,1.316,Meal Planning,"{'name': 'Meal Planning', 'id': '956336077278'}",0.815,1.075
+Food and Drinks,"{'name': 'Food and Drinks', 'id': '918530398158'}",0.688,1.316,Desserts,"{'name': 'Desserts', 'id': '897118241776'}",0.62,0.837
+Food and Drinks,"{'name': 'Food and Drinks', 'id': '918530398158'}",0.688,1.316,Drinks,"{'name': 'Drinks', 'id': '961675572303'}",0.504,1.281
+Food and Drinks,"{'name': 'Food and Drinks', 'id': '918530398158'}",0.688,1.316,Appetizers,"{'name': 'Appetizers', 'id': '918804435640'}",0.348,1.748
+Food and Drinks,"{'name': 'Food and Drinks', 'id': '918530398158'}",0.688,1.316,Fruit,"{'name': 'Fruit', 'id': '919979591528'}",0.337,1.045
+Food and Drinks,"{'name': 'Food and Drinks', 'id': '918530398158'}",0.688,1.316,World Cuisine,"{'name': 'World Cuisine', 'id': '936568516643'}",0.207,0.79
+Food and Drinks,"{'name': 'Food and Drinks', 'id': '918530398158'}",0.688,1.316,Cooking Method,"{'name': 'Cooking Method', 'id': '906644424942'}",0.109,0.753
+Food and Drinks,"{'name': 'Food and Drinks', 'id': '918530398158'}",0.688,1.316,Bread,"{'name': 'Bread', 'id': '926528168958'}",0.109,1.277
+Food and Drinks,"{'name': 'Food and Drinks', 'id': '918530398158'}",0.688,1.316,Salad,"{'name': 'Salad', 'id': '960683755187'}",0.105,1.166
+Food and Drinks,"{'name': 'Food and Drinks', 'id': '918530398158'}",0.688,1.316,Special Diet,"{'name': 'Special Diet', 'id': '933485647561'}",0.098,0.694
+Gardening,"{'name': 'Gardening', 'id': '909983286710'}",0.688,1.571,Garden Design,"{'name': 'Garden Design', 'id': '901468450490'}",0.471,3.129
+Gardening,"{'name': 'Gardening', 'id': '909983286710'}",0.688,1.571,Garden Types,"{'name': 'Garden Types', 'id': '926108676086'}",0.391,3.587
+Gardening,"{'name': 'Gardening', 'id': '909983286710'}",0.688,1.571,Planting,"{'name': 'Planting', 'id': '916000423671'}",0.366,0.477
+Beauty,"{'name': 'Beauty', 'id': '935541271955'}",0.656,1.049,Hair,"{'name': 'Hair', 'id': '903411883690'}",0.707,0.79
+Beauty,"{'name': 'Beauty', 'id': '935541271955'}",0.656,1.049,Skin Care,"{'name': 'Skin Care', 'id': '898977956499'}",0.494,0.861
+Beauty,"{'name': 'Beauty', 'id': '935541271955'}",0.656,1.049,Makeup,"{'name': 'Makeup', 'id': '948264532184'}",0.285,0.68
+Beauty,"{'name': 'Beauty', 'id': '935541271955'}",0.656,1.049,Bath and Body Care,"{'name': 'Bath and Body Care', 'id': '924324486050'}",0.255,0.738
+Beauty,"{'name': 'Beauty', 'id': '935541271955'}",0.656,1.049,Nails,"{'name': 'Nails', 'id': '956143059915'}",0.198,0.563
+Women's Fashion,"{'name': ""Women's Fashion"", 'id': '948967005229'}",0.646,1.052,Women's Jewelry and Accessories,"{'name': ""Women's Jewelry and Accessories"", 'id': '916487219793'}",0.432,0.878
+Women's Fashion,"{'name': ""Women's Fashion"", 'id': '948967005229'}",0.646,1.052,Women's Shoes,"{'name': ""Women's Shoes"", 'id': '923271066791'}",0.429,1.036
+Women's Fashion,"{'name': ""Women's Fashion"", 'id': '948967005229'}",0.646,1.052,Women's Bottoms,"{'name': ""Women's Bottoms"", 'id': '936466861734'}",0.429,1.217
+Women's Fashion,"{'name': ""Women's Fashion"", 'id': '948967005229'}",0.646,1.052,Women's Style,"{'name': ""Women's Style"", 'id': '947341333711'}",0.413,0.749
+Women's Fashion,"{'name': ""Women's Fashion"", 'id': '948967005229'}",0.646,1.052,Women's Intimates,"{'name': ""Women's Intimates"", 'id': '955049894411'}",0.371,2.773
+Women's Fashion,"{'name': ""Women's Fashion"", 'id': '948967005229'}",0.646,1.052,Women's Bag,"{'name': ""Women's Bag"", 'id': '941900382861'}",0.351,1.111
+Women's Fashion,"{'name': ""Women's Fashion"", 'id': '948967005229'}",0.646,1.052,Dress,"{'name': 'Dress', 'id': '945391946569'}",0.336,0.679
+Women's Fashion,"{'name': ""Women's Fashion"", 'id': '948967005229'}",0.646,1.052,Women's Outfits by Occasions,"{'name': ""Women's Outfits by Occasions"", 'id': '895148303659'}",0.328,1.146
+Women's Fashion,"{'name': ""Women's Fashion"", 'id': '948967005229'}",0.646,1.052,Women's Activewear,"{'name': ""Women's Activewear"", 'id': '900866395493'}",0.259,0.845
+Women's Fashion,"{'name': ""Women's Fashion"", 'id': '948967005229'}",0.646,1.052,Women's Outerwear,"{'name': ""Women's Outerwear"", 'id': '958088257491'}",0.127,1.67
+Women's Fashion,"{'name': ""Women's Fashion"", 'id': '948967005229'}",0.646,1.052,Women's Top,"{'name': ""Women's Top"", 'id': '945391038177'}",0.124,0.668
+Electronics,"{'name': 'Electronics', 'id': '960887632144'}",0.633,1.302,Cell Phones and Accessories,"{'name': 'Cell Phones and Accessories', 'id': '951444910525'}",0.256,0.366
+Animals,"{'name': 'Animals', 'id': '925056443165'}",0.613,1.658,Animals and Pet Supplies,"{'name': 'Animals and Pet Supplies', 'id': '903972677830'}",0.443,1.536
+Animals,"{'name': 'Animals', 'id': '925056443165'}",0.613,1.658,Bird,"{'name': 'Bird', 'id': '952174338649'}",0.285,2.019
+Animals,"{'name': 'Animals', 'id': '925056443165'}",0.613,1.658,Mammals,"{'name': 'Mammals', 'id': '956932523301'}",0.191,0.924
+Parenting,"{'name': 'Parenting', 'id': '920236059316'}",0.613,1.421,Toys,"{'name': 'Toys', 'id': '957620480011'}",0.703,1.126
+Parenting,"{'name': 'Parenting', 'id': '920236059316'}",0.613,1.421,Baby,"{'name': 'Baby', 'id': '933995299235'}",0.447,0.906
+Parenting,"{'name': 'Parenting', 'id': '920236059316'}",0.613,1.421,Family Activities,"{'name': 'Family Activities', 'id': '953318189801'}",0.305,3.821
+Vehicles,"{'name': 'Vehicles', 'id': '918093243960'}",0.586,1.773,Cars,"{'name': 'Cars', 'id': '950890153091'}",0.949,0.985
+Vehicles,"{'name': 'Vehicles', 'id': '918093243960'}",0.586,1.773,Motorcycles and Scooter,"{'name': 'Motorcycles and Scooter', 'id': '927349329594'}",0.306,2.966
+Vehicles,"{'name': 'Vehicles', 'id': '918093243960'}",0.586,1.773,Aircraft,"{'name': 'Aircraft', 'id': '923340792367'}",0.298,4.963
+Vehicles,"{'name': 'Vehicles', 'id': '918093243960'}",0.586,1.773,Watercraft,"{'name': 'Watercraft', 'id': '945927342064'}",0.251,8.245
+Vehicles,"{'name': 'Vehicles', 'id': '918093243960'}",0.586,1.773,Auto Services and Repair,"{'name': 'Auto Services and Repair', 'id': '895341869140'}",0.157,3.368
+Vehicles,"{'name': 'Vehicles', 'id': '918093243960'}",0.586,1.773,Car and Motorcycle Design,"{'name': 'Car and Motorcycle Design', 'id': '896742500696'}",0.136,2.506
+Vehicles,"{'name': 'Vehicles', 'id': '918093243960'}",0.586,1.773,Campers and RV,"{'name': 'Campers and RV', 'id': '903916128253'}",0.115,8.565
+Quotes,"{'name': 'Quotes', 'id': '948192800438'}",0.586,1.047,Quotes by Genres,"{'name': 'Quotes by Genres', 'id': '919926839991'}",0.94,0.973
+Event Planning,"{'name': 'Event Planning', 'id': '941870572865'}",0.454,0.908,Holiday,"{'name': 'Holiday', 'id': '910319220330'}",0.929,1.066
+Event Planning,"{'name': 'Event Planning', 'id': '941870572865'}",0.454,0.908,Gifts,"{'name': 'Gifts', 'id': '915305016791'}",0.214,0.716
+Event Planning,"{'name': 'Event Planning', 'id': '941870572865'}",0.454,0.908,Personal Celebration,"{'name': 'Personal Celebration', 'id': '944522520255'}",0.198,0.655
+Event Planning,"{'name': 'Event Planning', 'id': '941870572865'}",0.454,0.908,Hosting Occasions,"{'name': 'Hosting Occasions', 'id': '945568894404'}",0.143,0.677
+Wedding,"{'name': 'Wedding', 'id': '903260720461'}",0.399,1.072,Wedding Cake,"{'name': 'Wedding Cake', 'id': '959317080636'}",0.294,0.876
+Wedding,"{'name': 'Wedding', 'id': '903260720461'}",0.399,1.072,Wedding Outfit,"{'name': 'Wedding Outfit', 'id': '953811328161'}",0.281,0.812
+Wedding,"{'name': 'Wedding', 'id': '903260720461'}",0.399,1.072,Wedding Decor,"{'name': 'Wedding Decor', 'id': '919736858270'}",0.206,0.776
+Wedding,"{'name': 'Wedding', 'id': '903260720461'}",0.399,1.072,Wedding Stationery,"{'name': 'Wedding Stationery', 'id': '916276424875'}",0.2,1.129
+Men's Fashion,"{'name': ""Men's Fashion"", 'id': '924581335376'}",0.364,1.578,Men's Style,"{'name': ""Men's Style"", 'id': '903212673711'}",0.562,1.465
+Men's Fashion,"{'name': ""Men's Fashion"", 'id': '924581335376'}",0.364,1.578,Men's Outfit by Occasions,"{'name': ""Men's Outfit by Occasions"", 'id': '954653184301'}",0.247,1.441
+
+Countries,Percent of audience
+Other,0.499
+United States,0.157
+Brazil,0.075
+Russian Federation,0.055
+Mexico,0.047
+India,0.045
+Argentina,0.037
+Germany,0.03
+France,0.03
+Colombia,0.025
+
+Metros,Percent of audience
+Denver,0.048
+"Charleston, SC",0.048
+Atlanta,0.048
+Los Angeles,0.048
+Albuquerque-Santa Fe,0.032
+Omaha,0.032
+Richmond-Petersburg,0.032
+Seattle-Tacoma,0.032
+Springfield-Holyoke,0.032
+Chicago,0.032
+
+Gender,Percent of audience
+Female,0.461
+Male,0.461
+Unspecified & custom,0.077
+
+Device,Percent of audience
+Android Mobile,0.454
+iPhone,0.369
+Web,0.367
+iPad,0.065
+Mobile Web,0.055
+Android Tablet,0.05
+
+Age,Percent of audience
+25-34,0.299
+35-44,0.237
+55-64,0.12
+18-24,0.117
+50-54,0.11
+45-49,0.082
+65+,0.027
+
