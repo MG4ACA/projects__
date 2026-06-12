@@ -1,7 +1,7 @@
 # Pinterest Content Generation Brief — Master SOP
 **Account:** `pinterest.com/wildbuild`
 **Reader:** Claude Sonnet (AI agent) — this document is your primary instruction set for every batch session.
-**Last Updated:** June 8, 2026
+**Last Updated:** June 12, 2026 (v1.1)
 
 ---
 
@@ -68,15 +68,23 @@ the brief. Do not output the full CSV in the chat window.
 | **Top US Metros** | Los Angeles (6%), New York (5%), Seattle-Tacoma (2.8%), Washington DC (2.5%), San Francisco (2.5%), Chicago (2.3%) |
 | **Gender Split** | Male 48.9% / Female 44% / Other 7.1% |
 | **Primary Age Bracket** | 25–34 (34.8%), then 35–44 (20.6%) |
-| **Total Monthly Audience** | ~99,000 (growing ~18% over 5 weeks as of June 2026) |
+| **Total Monthly Audience** | **115,000** (jumped from 99k → 115k between June 4–9, 2026) |
 | **Primary Device** | Web (46.8%), Android Mobile (40.6%), iPhone (33.1%) |
 
-### Software Engineering Identity (for Code board)
-The account owner is a **software engineer** building a freelance consulting practice targeting **startup founders** as clients. The Code board is a **lead generation channel** — not just tech content. Every Code pin must either:
-- Attract a startup founder who needs a developer, or
-- Position the account owner as a high-value senior/principal engineer worth $15K–$25K/month in consulting fees.
+### Software Company Identity (for Code board)
+The account owner runs a **small software studio / freelance team** that:
+- Builds custom web apps, mobile apps, and websites for clients
+- Has **productised software** (a salon booking system, a tuition institute management system, and similar vertical SaaS products)
+- Targets **both startups and SMEs** — any business owner who needs a software solution
 
-**Target client:** Early-stage startup founders (pre-seed to Series B), building SaaS products, usually non-technical or with small engineering teams.
+The Code board is a **direct lead generation channel**. Every pin must speak to a **business owner's pain point** and position the studio as the obvious solution.
+
+**Target clients:**
+- Small business owners (salons, tuition centres, retail, hospitality) who need management software
+- Startups and SMEs needing custom web apps or mobile apps
+- Founders who need a reliable dev team without hiring in-house
+
+**Positioning:** A professional, premium software studio that delivers real business outcomes — not a random freelancer, but a trusted technology partner.
 
 ---
 
@@ -89,7 +97,9 @@ The account owner is a **software engineer** building a freelance consulting pra
 | `Future Living & Off-Grid Tech` | `pinterest.com/wildbuild/future-living-off-grid-tech/` | Slot-1 (7:30am) + Slot-4 (12:30pm) | Static Image |
 | `Smart Pet Wellness` | `pinterest.com/wildbuild/smart-pet-wellness-eco-tech-quiet-luxury/` | Slot-2 (9:30am) + Slot-6 (3:30pm) | Static Image |
 | `Nail Aesthetic & Art Inspo` | `pinterest.com/wildbuild/nail-aesthetic-art-inspo/` | Slot-3 (11:00am) + Slot-5 (2:00pm) | Static Image |
-| `Code. Build. Ship. — Freelance Tech Life` | `pinterest.com/wildbuild/code-build-ship-freelance-tech-life/` | Slot-7 (6:30pm) + Slot-8 (9:00pm) | Static Image |
+| `Build. Scale. Ship. — Software Studio` | `pinterest.com/wildbuild/build-scale-ship-software-studio/` | Slot-7 (6:30pm) + Slot-8 (9:00pm) | Static Image |
+
+> ⚠️ **Board renamed from v13:** `Code. Build. Ship. — Freelance Tech Life` → `Build. Scale. Ship. — Software Studio` (effective v14, June 16 2026)
 
 ---
 
@@ -251,69 +261,101 @@ Anchor visual prompts in recognisable aspirational US settings. Mix across the b
 - Rare/distinguished breeds only (Maine Coon, Norwegian Forest Cat, Birman, Russian Blue, Turkish Angora, Bengal, etc.)
 
 ### 7C. Nail Aesthetic & Art Inspo
-**Mission:** Aspirational nail art content aligned with quiet luxury aesthetics — attracts the beauty-interest segment of the audience while maintaining aesthetic coherence with the off-grid/architecture visual language.
+**Mission:** Eye-catching, scroll-stopping nail art that earns saves from a beauty audience — with a visual upgrade to ultra-sharp photorealism and bold dramatic styling that outperforms generic nail content.
 
 **Board Aesthetic Direction:**
-- **Primary aesthetic:** Quiet luxury, editorial, dark and moody, material-focused
-- **Avoid:** Bright neon, generic pink, overtly maximalist sets, heavily decorated "TikTok" nail art
-- **Align with:** The same audience that saves Corten steel cabins and dark chrome architecture
+- **Primary aesthetic:** Ultra-photorealistic, drama-first, luxury editorial — think Vogue beauty shoot meets nail close-up
+- **Visual quality bar:** Every pin must feel like it was shot in a premium photography studio. The nail finish texture (chrome shift, gel gloss, glitter refraction) must be the hero.
+- **Avoid:** Flat lighting, generic simple sets, basic pink without drama, anything that looks like a phone selfie
 
-**10 Nail Designs per batch — Rotating Format Mix:**
-| Format | Per Batch | Description |
+**10 Nail Designs per batch — v14+ Format Mix (Trending 2026):**
+| Format | Per Batch | 2026 Trend Notes |
 |---|---|---|
-| Dark Chrome / Metallic | 2 | Chrome silver, chrome burgundy, mercury, dark gold |
-| Glass / Aurora / Glazed | 2 | Translucent, ice-effect, glazed donut chrome |
-| Dark Matte | 1 | Forest green, charcoal, deep plum, wine matte |
-| Neutral Luxury | 1 | Mocha latte, nude pearl, caramel soft gel |
-| Editorial Nail Art | 2 | Marble, abstract line, minimalist negative space |
-| Trend-Led | 2 | Coquette/bow, coastal, seasonal, high-search trend |
+| 3D Gel Gem / Crystal | 2 | Swarovski-style crystals, jelly gem nails, faceted stone embeds — shoot with macro lens to show refraction |
+| Chrome Powder / Cat-Eye Gel | 2 | Duochrome shift nails, cat-eye magnetic gel (colour-shifting under light), mirror-finish chrome powder |
+| Holographic / Aurora | 2 | Rainbow holographic foil, aurora shifting nails, multichromatic iridescent gel |
+| Dark Luxury Matte | 1 | Black jelly nails, ink-dark gel, deep gothic plum — matte velvety surface |
+| Glazed / Glass Effect | 1 | Sheer glazed nude, glass nails with inner shimmer, ice-effect gel |
+| Trend Statement | 2 | Rotate: coquette 3D bow, stiletto chrome, summer jewel tone, nail art as wearable art |
 
-**Nail Photography Style (for AI Prompt):**
-- Always: "Hyper-realistic 9:16 vertical editorial nail photograph"
-- Always specify: nail shape (almond / oval / coffin / square / stiletto), length, finish (matte / chrome / gel / glazed)
-- Always include: a specific backdrop (marble, slate, silk, driftwood, velvet, linen) and 1 styling prop (dried flower, pearl, ring, sea glass, orchid)
-- Always specify: light direction (directional side light / overhead / soft warm / hard single source)
-- Never: show the full arm — close-up hand only, palm-down or fingers slightly fanned
+**UPGRADED Nail AI Prompt Specification (v14+):**
+
+Use this enhanced template for ALL nail pins:
+```
+Ultra-photorealistic 9:16 vertical macro nail photograph, shot on a Phase One medium format camera.
+[Nail description: shape, length, finish type in extreme detail — describe the optical properties
+of the finish, e.g. 'the chrome powder creates a mirror that reflects the studio lights as two
+pinpoint hotspots on each nail surface'].  
+[Backdrop: premium studio surface — black obsidian stone / wet smoked glass / brushed gold metal
+/ crumpled black silk / deep navy crushed velvet / frosted acrylic].  
+[Styling props: 1–2 objects — Swarovski crystal, fresh flower petal, liquid mercury droplet,
+gold leaf flake, cut gemstone, rose gold chain].  
+[Lighting: specify exactly — 'single hard light source from the left creating a sharp chrome
+reflection' / 'two softbox lights creating a clean double-hotspot on the chrome finish' /
+'ring light creating a perfect circular reflection in each nail'].  
+[Composition: overhead flat-lay / 45-degree angle / extreme close-up of 3 nails / side profile
+showing nail depth / fan-spread fingers].  
+8k, tack-sharp nail macro photography, nail finish is the hero of the shot.
+```
+
+**Key visual upgrades vs previous batches:**
+- Describe the **optical physics** of the finish in the prompt (how light behaves on the surface)
+- Use **premium backdrops** that create contrast and drama (obsidian, smoked glass, crushed velvet)
+- Include **props with texture** that echo the nail finish (crystals for gem nails, liquid for glazed)
+- Specify **exact lighting** — not just 'side light' but 'a single 1x1 softbox at 45 degrees creating a gradient reflection'
+- Push **extreme close-up framing** on hero nails — 2–3 nails filling the frame, not a full 5-finger spread
 
 **2026 High-Search Nail Keywords to rotate through:**
-`chrome nails`, `glazed donut nails`, `quiet luxury nails`, `glass nails`, `aurora nails`, `coquette nails`, `matte nails`, `marble nail art`, `mocha latte nails`, `abstract nail art`, `dark nails`, `coastal nails`
+`3D nail art`, `crystal nails`, `gem nails`, `chrome nails 2026`, `cat eye nails`, `holographic nails`,
+`aurora nails`, `glazed nails`, `jelly nails`, `coquette nails`, `dark nails`, `glass nails`,
+`duochrome nails`, `nail inspo 2026`, `quiet luxury nails`
 
-### 7D. Code. Build. Ship. — Freelance Tech Life
-**Mission:** Lead generation for software engineering consulting. Target: startup founders who need a senior/principal-level freelance developer. Position the account owner as a fractional CTO / senior dev worth $15K–$25K/month.
+### 7D. Build. Scale. Ship. — Software Studio
+**Mission:** Direct lead generation for the software studio. Target: business owners (SMEs and startups) who have a software problem and need a professional team to solve it. Every pin must address a **specific business pain point** and make the studio the obvious answer.
+
+**What the studio offers (use these in content):**
+- Custom web applications and mobile apps
+- Salon booking management system (productised)
+- Tuition institute management system (productised)
+- Business websites and e-commerce
+- Digital transformation for small businesses
 
 **Pin Architecture per day:**
-- **Slot-7 (6:30pm) — SE-Lifestyle:** A workspace photograph inside an aspirational off-grid or urban-premium setting, with monitor screens showing client-facing work (proposals, pipelines, architecture diagrams, revenue dashboards). The visual says: "This person is successful, commands high fees, and works from extraordinary places."
-- **Slot-8 (9:00pm) — SE-Infographic:** A dark editorial infographic providing genuine strategic value to a startup founder — positioning, pricing, client acquisition, tech stack, team scaling. The information says: "This account understands how to build a startup. Follow for more."
+- **Slot-7 (6:30pm) — Studio Lifestyle:** A premium workspace visual inside an aspirational setting. Monitors show studio work (client project dashboard, app UI design, booking system interface, Figma prototype). The visual says: "This is a professional team that delivers premium results."
+- **Slot-8 (9:00pm) — Business Pain Infographic:** A dark editorial infographic that speaks directly to a business owner's software-related pain point. Opens with the problem they have today. Closes with a clear positioning of the studio as the solution. **No jargon. Business language only.**
 
-**SE-Infographic Design Specification:**
+**Infographic Design Specification:**
 ```
 Background: Deep charcoal (#0d0d1a or #1a1a2e)
-Title: Bold white, Outfit or Inter font
-Subtitle: Amber (#f59e0b or similar)
-Accent colours: Amber (primary), Teal (#14b8a6, secondary), Green (#22c55e for positive outcomes), Red (#ef4444 for warnings)
-No photography inside the infographic
-Footer: Always includes an amber-coloured summary statement or stat
-Layout: Clean, structured, scannable — no decorative flourishes
+Title: Bold white — always opens with a BUSINESS PAIN POINT, not a tech concept
+  Examples: '5 Signs Your Salon Is Losing Bookings to Bad Software'
+           'Why Your Business Needs a Custom App (Not Another Spreadsheet)'
+           'The Hidden Cost of Manual Booking Systems'
+Subtitle: Amber (#f59e0b)
+Accent: Teal for solution elements, Red for problem elements, Green for outcome/result
+Footer: Always ends with a clear CTA-adjacent statement (not a direct CTA, but implies one)
+  Example: 'The right software pays for itself in 90 days.'
+Language: Business owner language — no technical jargon
 ```
 
-**SE-Lifestyle Workspace Specification:**
+**Business Pain Topics to rotate across batches:**
+- Salon / beauty business: losing bookings, no-shows, manual scheduling chaos, WhatsApp booking mess
+- Tuition centres / education: manual fee tracking, student management, parent communication
+- Retail / hospitality: inventory management, customer data, loyalty systems
+- General SME: why custom software beats off-the-shelf, ROI of a proper web app, cost of bad tech
+- Startups: MVP development, when to build vs buy, how to brief a dev team correctly
+
+**Studio Workspace Specification:**
 ```
 Always: No person visible at the desk
-Always: Monitors showing specific, legible content (real UI: Stripe, Notion, GitHub, Figma, Linear, Loom, CRM pipeline)
-Always: Named revenue figures on screen (e.g. "$18,400 MRR", "$28K retainer")
-Always: EcoFlow system on the floor with green LED
-Always: Aspirational view through glass (lake, float plane dock, city skyline, red rocks, forest)
-Desk materials: live-edge walnut, concrete top, Corten steel frame — rotate between batches
-Settings: Rotate between PNW glass cabin lake, Sedona glass office, Sierra Nevada cabin, NYC glass loft, SF Bay office, Austin glass loft, Pacific Coast van
+Always: Monitors showing real studio work:
+  - Figma app UI design (booking system, dashboard, mobile app screens)
+  - Client project management board (Linear or Notion)
+  - App prototype or live product in browser
+  - Analytics dashboard showing a client's business metrics improving
+Desk materials: live-edge walnut, glass top, clean modern studio aesthetic
+Settings: Modern studio office, glass cabin, premium co-working space, rooftop studio
 ```
-
-**SE Content Themes to rotate (never repeat same theme in consecutive batches):**
-- Client acquisition: cold outreach, proposal writing, pipeline management
-- Pricing strategy: hourly → retainer → outcome-based → fractional CTO
-- Positioning: niche definition, language shift, founder psychology
-- Tech content: SaaS MVP stack, system architecture, scaling decisions
-- Income milestone: MRR growth reality, revenue model, agency transition
-- Team/business: delegation, hiring, remote culture, agency model
 
 ---
 
@@ -446,25 +488,42 @@ Pinterest_Next[PIN COUNT]_PostIdeas_[StartMonthDay]_[EndMonthDay]_v[VERSION].csv
 
 ---
 
-## 13. PERFORMANCE INTELLIGENCE (Updated June 2026)
+## 13. PERFORMANCE INTELLIGENCE (Updated June 12, 2026)
 
-### Board Velocity (May 8 – June 7, 2026)
+### 🚀 Audience Growth
+| Date | Monthly Audience | Growth |
+|---|---|---|
+| June 4, 2026 | 99,000 | baseline |
+| June 9, 2026 | **115,000** | **+16% in 5 days** |
+
+### Board Velocity (May 13 – June 12, 2026)
 | Board | Impressions | Saves | Save Rate | Trend |
 |---|---|---|---|---|
-| Smart Pet Wellness | 75,750 | **389** | 0.51% | ⬆️ +26% saves vs previous period |
-| Future Living & Off-Grid Tech | 76,114 | **246** | 0.32% | ⬆️ Stable growth |
-| Code. Build. Ship. | 6,626 | **15** | 0.23% | ⬆️ +50% (low base, accelerating) |
+| Smart Pet Wellness | **84,127** | **450** | 0.53% | ⬆️ New high — best board |
+| Future Living & Off-Grid Tech | **80,274** | **259** | 0.32% | ⬆️ Steady |
+| Build. Scale. Ship. | **9,248** | **28** | 0.30% | ⬆️ +87% saves vs prior period |
+| Nail Aesthetic & Art Inspo | **22** | **0** | — | 🆕 Brand new — needs visual upgrade |
 
-### All-Time Top Pin Themes (by Impressions)
+### Affinity Score Changes (June 4 → June 9, 2026)
+| Interest | June 4 | June 9 | Change |
+|---|---|---|---|
+| **Watercraft** | 5.858x | **5.925x** | ⬆️ +0.067 — still #1, growing |
+| **Metal Art** | 5.213x | 5.130x | ↘️ -0.083 — minor dip, stable |
+| **Campers & RV** | 4.910x | 4.766x | ↘️ -0.144 — softening, reduce priority |
+| **Aircraft** | 4.286x | 4.281x | → Stable |
+| **Illustration** | 1.382x | 1.405x | ⬆️ +0.023 — supports editorial nail content |
+| **Body Art** | 1.164x | 1.182x | ⬆️ +0.018 — nail board signal growing |
+
+### All-Time Top Pin Themes (by Impressions — updated June 12)
 | Rank | Visual Formula | Impressions | Board |
 |---|---|---|---|
-| 1 | Glass + watercraft + water mirror symmetry | 16,081 | Future Living |
-| 2 | Mirrored glass on still water | 9,496 | Future Living |
-| 3 | Wilderkind predator + twilight rim-light | 8,191 | Smart Pet |
-| 4 | Modular floating glass dock platform | 7,970 | Future Living |
-| 5+ | PNW glass + amber interior / Wilderkind big cat | 5,000–5,500 | Both |
+| 1 | Glass + watercraft + water mirror symmetry | **20,115** | Future Living |
+| 2 | Mirrored glass on still water | 8,725 | Future Living |
+| 3 | Modular floating glass dock platform | 8,334 | Future Living |
+| 4 | Wilderkind predator + twilight rim-light | 8,259 | Smart Pet |
+| 5 | PNW glass + amber interior | 6,114 | Future Living |
 
-**Key takeaway:** Water reflection + glass transparency is the single most powerful visual formula in the account. Prioritise in every batch.
+**Key takeaway:** The #1 pin grew from 16,081 → **20,115 impressions** — it's still gaining. Water reflection formula is compounding. Double down every batch.
 
 ---
 
@@ -493,6 +552,7 @@ Pinterest_Next[PIN COUNT]_PostIdeas_[StartMonthDay]_[EndMonthDay]_v[VERSION].csv
 | Version | Date | Change |
 |---|---|---|
 | v1.0 | June 8, 2026 | Initial document created from v9–v13 batch learnings |
+| v1.1 | June 12, 2026 | Code board repositioned: freelance → software studio (agency+products). Nail prompts upgraded to ultra-photorealistic macro with 3D/holographic/cat-eye trending formats. Board renamed to 'Build. Scale. Ship. — Software Studio'. Performance intel updated to 115k audience milestone. |
 
 ---
 
