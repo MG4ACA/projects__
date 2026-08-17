@@ -1,7 +1,7 @@
 # Pinterest Content Generation Brief — Master SOP
 **Account:** `pinterest.com/wildbuild`
 **Reader:** Claude Sonnet (AI agent) — this document is your primary instruction set for every batch session.
-**Last Updated:** June 12, 2026 (v1.1)
+**Last Updated:** July 31, 2026 (v1.3)
 
 ---
 
@@ -22,8 +22,8 @@ Before generating any content, Claude must complete these steps in order:
         to identify the exact Themes, AI Prompts, and visual formulas
         behind the highest-performing pins.
 
-[ ] 4. Note the batch dates: next batch always runs Mon–Fri (5 days).
-        Calculate Day 1 as the next Monday after the current date.
+[ ] 4. Note the batch dates: 5-day batch (no fixed weekday).
+        Day 1 = first available posting day after current date.
 
 [ ] 5. Confirm the output filename follows the naming convention
         (see Section 9) before writing the CSV.
@@ -38,7 +38,7 @@ Use this prompt at the start of every new batch session:
 ```
 Role: You are a Pinterest Growth Scientist and AI Content Strategist
 for the @wildbuild Pinterest account. Your task is to generate a new
-5-day content plan (40 pins, 8 pins/day, Mon–Fri).
+5-day content plan (45 pins, 9 pins/day, 5-day batch).
 
 Follow the instructions in Content-Brief-for-Claude.md exactly.
 
@@ -49,8 +49,8 @@ Extract top pin performance, board velocity, and affinity score changes.
 Step 2: Cross-reference top pin IDs with previous PostIdeas CSVs to
 identify the winning visual formulas to replicate.
 
-Step 3: Generate the 40-pin CSV for [INSERT NEXT MONDAY DATE] to
-[INSERT NEXT FRIDAY DATE] following the CSV schema in the brief exactly.
+Step 3: Generate the 45-pin CSV for [INSERT DAY 1 DATE] to
+[INSERT DAY 5 DATE] following the CSV schema in the brief exactly.
 
 Output the file to the project folder using the naming convention in
 the brief. Do not output the full CSV in the chat window.
@@ -68,7 +68,7 @@ the brief. Do not output the full CSV in the chat window.
 | **Top US Metros** | Los Angeles (6%), New York (5%), Seattle-Tacoma (2.8%), Washington DC (2.5%), San Francisco (2.5%), Chicago (2.3%) |
 | **Gender Split** | Male 48.9% / Female 44% / Other 7.1% |
 | **Primary Age Bracket** | 25–34 (34.8%), then 35–44 (20.6%) |
-| **Total Monthly Audience** | **115,000** (jumped from 99k → 115k between June 4–9, 2026) |
+| **Total Monthly Audience** | **253,000** (jumped again — +15% in one week, from 220k Jul 22 → 253k Jul 28) |
 | **Primary Device** | Web (46.8%), Android Mobile (40.6%), iPhone (33.1%) |
 
 ### Software Company Identity (for Code board)
@@ -94,30 +94,30 @@ The Code board is a **direct lead generation channel**. Every pin must speak to 
 
 | Board Name | Pinterest URL | Daily Slots | Post Type |
 |---|---|---|---|
-| `Future Living & Off-Grid Tech` | `pinterest.com/wildbuild/future-living-off-grid-tech/` | Slot-1 (7:30am) + Slot-4 (12:30pm) | Static Image |
-| `Smart Pet Wellness` | `pinterest.com/wildbuild/smart-pet-wellness-eco-tech-quiet-luxury/` | Slot-2 (9:30am) + Slot-6 (3:30pm) | Static Image |
-| `Nail Aesthetic & Art Inspo` | `pinterest.com/wildbuild/nail-aesthetic-art-inspo/` | Slot-3 (11:00am) + Slot-5 (2:00pm) | Static Image |
-| `Build. Scale. Ship. — Software Studio` | `pinterest.com/wildbuild/build-scale-ship-software-studio/` | Slot-7 (6:30pm) + Slot-8 (9:00pm) | Static Image |
+| `Future Living & Off-Grid Tech` | `pinterest.com/wildbuild/future-living-off-grid-tech/` | Slot-1 (7:30am) + Slot-3 (11:00am) + Slot-5 (2:00pm) | Static Image |
+| `Smart Pet Wellness` | `pinterest.com/wildbuild/smart-pet-wellness-eco-tech-quiet-luxury/` | Slot-2 (9:30am) + Slot-4 (12:30pm) + Slot-6 (3:30pm) | Static Image |
+| `Build. Scale. Ship. — Software Studio` | `pinterest.com/wildbuild/build-scale-ship-software-studio/` | Slot-7 (6:30pm) + Slot-8 (9:00pm) + Slot-9 (10:00pm) | Static Image |
 
-> ⚠️ **Board renamed from v13:** `Code. Build. Ship. — Freelance Tech Life` → `Build. Scale. Ship. — Software Studio` (effective v14, June 16 2026)
+> ⚠️ **Nail Aesthetic board DISCONTINUED** (effective July 2026). 3 active boards only.
 
 ---
 
 ## 3. DAILY POSTING SCHEDULE
 
-**8 pins per day · 5 days (Monday–Friday) · 40 pins per batch**
+**9 pins per day · 5-day batch · 45 pins per batch**
 All times are **US Eastern Standard Time (EST)**.
 
 | Slot | Time (EST) | Board | Pin Sub-Type |
 |---|---|---|---|
-| Slot-1 | 7:30am | Future Living & Off-Grid Tech | Architecture / Landscape |
-| Slot-2 | 9:30am | Smart Pet Wellness | Wilderkind or Adventure Dog |
-| Slot-3 | 11:00am | Nail Aesthetic & Art Inspo | Nail Art / Trend |
-| Slot-4 | 12:30pm | Future Living & Off-Grid Tech | Material / Tech / Detail |
-| Slot-5 | 2:00pm | Nail Aesthetic & Art Inspo | Nail Art / Trend |
-| Slot-6 | 3:30pm | Smart Pet Wellness | Adventure Dog or Indoor Luxury |
-| Slot-7 | 6:30pm | Code. Build. Ship. | SE-Lifestyle (workspace image) |
-| Slot-8 | 9:00pm | Code. Build. Ship. | SE-Infographic (dark editorial) |
+| Slot-1 | 7:30am | Future Living & Off-Grid Tech | Architecture / Landscape / Watercraft |
+| Slot-2 | 9:30am | Smart Pet Wellness | Wilderkind Wild Predator |
+| Slot-3 | 11:00am | Future Living & Off-Grid Tech | Material Detail / Campers & RV / Aircraft |
+| Slot-4 | 12:30pm | Smart Pet Wellness | Adventure Dog |
+| Slot-5 | 2:00pm | Future Living & Off-Grid Tech | Floating / Cantilevered / New Structural Format |
+| Slot-6 | 3:30pm | Smart Pet Wellness | Adventure Dog or Indoor Luxury Cat |
+| Slot-7 | 6:30pm | Build. Scale. Ship. — Software Studio | SE-Lifestyle (workspace image) |
+| Slot-8 | 9:00pm | Build. Scale. Ship. — Software Studio | SE-Infographic (dark editorial) |
+| Slot-9 | 10:00pm | Build. Scale. Ship. — Software Studio | SE-Lifestyle (workspace image — different client type from Slot-7) |
 
 ---
 
@@ -127,34 +127,33 @@ These are the **multiplier scores** showing how much more likely our audience is
 
 > ⚠️ Always read the latest audience CSV at the start of each session and note any scores that have changed significantly (>0.3 change). Flag changes in your pre-generation analysis.
 
-### 🔴 Tier 1 — Hyper-Affinity (5x+): Must appear in ≥40% of Future Living pins
-| Interest | Affinity Score | Application |
-|---|---|---|
-| **Watercraft** | **5.858x** | Glass boathouses, floating platforms, custom lake docks, seaplane docks, pontoon architecture |
-| **Metal Art / Industrial** | **5.213x** | Corten steel cladding, raw I-beam frames, welded steel facades, steel joinery |
+> ⚠️ Updated July 31, 2026 — Campers & RV overtook Watercraft as #1 affinity. Massive continued surge. Double down on both.
 
-### 🟠 Tier 2 — High Affinity (4–5x): Target ≥20% of Future Living pins
-| Interest | Affinity Score | Application |
-|---|---|---|
-| **Aircraft** | **4.286x** *(rising)* | Float planes moored at glass cabins, seaplane ramps, hangar-aesthetic buildings, Cessna 185 aesthetics |
-| **Campers & RV** | **4.91x** | Ultra-luxury van builds, glass pod trailers, Land Cruiser expedition rigs |
+### 🔴 Tier 1 — Hyper-Affinity (6x+): Must appear in ≥50% of Future Living pins
+| Interest | Affinity Score | Change | Application |
+|---|---|---|---|
+| **Campers & RV** | **7.140x** | ⬆️ +0.812 from Jul 22 — **NOW #1 OVERALL** | Ultra-luxury van builds, glass pod trailers, Airstream integrations, expedition pods, Land Cruiser builds, Patagonia RVs — **PRIORITY #1** |
+| **Watercraft** | **6.759x** | ⬆️ +0.268 from Jul 22 — still surging | Glass boathouses, floating platforms, custom lake docks, seaplane docks, pontoon architecture — **DOUBLE DOWN** |
 
-### 🟡 Tier 3 — Strong Affinity (3–4x): Weave through both Future Living and nail content
-| Interest | Affinity Score | Application |
-|---|---|---|
-| **Woodworking** | **3.728x** | Japanese joinery, live-edge slabs, timber frames, shou sugi ban decking |
-| **Cycling** | **3.984x** | (lower priority — keep in mind for outdoor lifestyle content) |
-| **Exterior / Door Design** | **3.349x / 3.449x** | Architectural entrance sequences, threshold moments, exterior material details |
-| **Educational Architecture** | **4.330x** | Glass structure engineering logic, parametric design, structural honesty |
+### 🟠 Tier 2 — High Affinity (5–6x): Target ≥25% of Future Living pins
+| Interest | Affinity Score | Change | Application |
+|---|---|---|---|
+| **Metal Art / Industrial** | **5.760x** | ⬆️ +0.472 from Jul 22 — significant jump | Corten steel cladding, raw I-beam frames, welded steel facades, steel joinery — increase frequency |
+
+### 🟡 Tier 3 — Strong Affinity (3–5x): Weave through Future Living pins
+| Interest | Affinity Score | Change | Application |
+|---|---|---|---|
+| **Aircraft** | **4.463x** | ⬆️ +0.185 from Jul 22 | Float planes moored at glass cabins, seaplane ramps, hangar-aesthetic buildings, Cessna 185 aesthetics |
+| **Woodworking** | **3.943x** | ⬆️ +0.233 from Jul 22 | Japanese joinery, live-edge slabs, timber frames, shou sugi ban decking |
+| **Exterior / Door Design** | **3.433x / 3.177x** | ⬆️ Slight rise | Architectural entrance sequences, threshold moments, exterior material details |
+| **Educational Architecture** | **3.958x** | → Stable | Parametric design, structural honesty, engineering-forward architecture |
 
 ### 🟢 Tier 4 — Moderate Affinity: Supporting context
 | Interest | Score | Notes |
 |---|---|---|
-| Landscape & Urbanism Architecture | 2.545x | Background context for architecture pins |
-| Garden Design | 2.513x | Outdoor spaces around cabins |
-| Mosaic / Poster Design | 2.132x / 2.334x | Design-adjacent content |
-| Body Art / Nails | 1.164x / 0.528x | Supports nail board — growing signal |
-| Illustration | 1.382x | Supports design-forward nail art content |
+| Landscape & Urbanism Architecture | 2.521x | Background context for architecture pins |
+| Garden Design | 2.484x | Outdoor spaces around cabins |
+| Mosaic / Poster Design | 1.924x / 2.232x | Design-adjacent content |
 
 ---
 
@@ -260,57 +259,7 @@ Anchor visual prompts in recognisable aspirational US settings. Mix across the b
 - Light source must be specific (lake-reflected aquamarine, amber interior, moonlight from circular skylight)
 - Rare/distinguished breeds only (Maine Coon, Norwegian Forest Cat, Birman, Russian Blue, Turkish Angora, Bengal, etc.)
 
-### 7C. Nail Aesthetic & Art Inspo
-**Mission:** Eye-catching, scroll-stopping nail art that earns saves from a beauty audience — with a visual upgrade to ultra-sharp photorealism and bold dramatic styling that outperforms generic nail content.
-
-**Board Aesthetic Direction:**
-- **Primary aesthetic:** Ultra-photorealistic, drama-first, luxury editorial — think Vogue beauty shoot meets nail close-up
-- **Visual quality bar:** Every pin must feel like it was shot in a premium photography studio. The nail finish texture (chrome shift, gel gloss, glitter refraction) must be the hero.
-- **Avoid:** Flat lighting, generic simple sets, basic pink without drama, anything that looks like a phone selfie
-
-**10 Nail Designs per batch — v14+ Format Mix (Trending 2026):**
-| Format | Per Batch | 2026 Trend Notes |
-|---|---|---|
-| 3D Gel Gem / Crystal | 2 | Swarovski-style crystals, jelly gem nails, faceted stone embeds — shoot with macro lens to show refraction |
-| Chrome Powder / Cat-Eye Gel | 2 | Duochrome shift nails, cat-eye magnetic gel (colour-shifting under light), mirror-finish chrome powder |
-| Holographic / Aurora | 2 | Rainbow holographic foil, aurora shifting nails, multichromatic iridescent gel |
-| Dark Luxury Matte | 1 | Black jelly nails, ink-dark gel, deep gothic plum — matte velvety surface |
-| Glazed / Glass Effect | 1 | Sheer glazed nude, glass nails with inner shimmer, ice-effect gel |
-| Trend Statement | 2 | Rotate: coquette 3D bow, stiletto chrome, summer jewel tone, nail art as wearable art |
-
-**UPGRADED Nail AI Prompt Specification (v14+):**
-
-Use this enhanced template for ALL nail pins:
-```
-Ultra-photorealistic 9:16 vertical macro nail photograph, shot on a Phase One medium format camera.
-[Nail description: shape, length, finish type in extreme detail — describe the optical properties
-of the finish, e.g. 'the chrome powder creates a mirror that reflects the studio lights as two
-pinpoint hotspots on each nail surface'].  
-[Backdrop: premium studio surface — black obsidian stone / wet smoked glass / brushed gold metal
-/ crumpled black silk / deep navy crushed velvet / frosted acrylic].  
-[Styling props: 1–2 objects — Swarovski crystal, fresh flower petal, liquid mercury droplet,
-gold leaf flake, cut gemstone, rose gold chain].  
-[Lighting: specify exactly — 'single hard light source from the left creating a sharp chrome
-reflection' / 'two softbox lights creating a clean double-hotspot on the chrome finish' /
-'ring light creating a perfect circular reflection in each nail'].  
-[Composition: overhead flat-lay / 45-degree angle / extreme close-up of 3 nails / side profile
-showing nail depth / fan-spread fingers].  
-8k, tack-sharp nail macro photography, nail finish is the hero of the shot.
-```
-
-**Key visual upgrades vs previous batches:**
-- Describe the **optical physics** of the finish in the prompt (how light behaves on the surface)
-- Use **premium backdrops** that create contrast and drama (obsidian, smoked glass, crushed velvet)
-- Include **props with texture** that echo the nail finish (crystals for gem nails, liquid for glazed)
-- Specify **exact lighting** — not just 'side light' but 'a single 1x1 softbox at 45 degrees creating a gradient reflection'
-- Push **extreme close-up framing** on hero nails — 2–3 nails filling the frame, not a full 5-finger spread
-
-**2026 High-Search Nail Keywords to rotate through:**
-`3D nail art`, `crystal nails`, `gem nails`, `chrome nails 2026`, `cat eye nails`, `holographic nails`,
-`aurora nails`, `glazed nails`, `jelly nails`, `coquette nails`, `dark nails`, `glass nails`,
-`duochrome nails`, `nail inspo 2026`, `quiet luxury nails`
-
-### 7D. Build. Scale. Ship. — Software Studio
+### 7C. Build. Scale. Ship. — Software Studio
 **Mission:** Direct lead generation for the software studio. Target: business owners (SMEs and startups) who have a software problem and need a professional team to solve it. Every pin must address a **specific business pain point** and make the studio the obvious answer.
 
 **What the studio offers (use these in content):**
@@ -436,7 +385,7 @@ Hyper-realistic 9:16 vertical photo, [Style Tag]. [Subject description in detail
 
 | Field | Rule |
 |---|---|
-| `Post #` | Sequential 1–40 (for standard 5-day batch) |
+| `Post #` | Sequential 1–45 (for standard 5-day batch) |
 | `Board` | Exact board name from Section 2 — copy-paste, no paraphrase |
 | `Title` | See Section 8 — must include year (2026), specific visual, category keyword |
 | `Description` | Must start "Save this for your [specific] board." — 150–250 words + 5–7 hashtags |
@@ -457,11 +406,11 @@ Pinterest_Next[PIN COUNT]_PostIdeas_[StartMonthDay]_[EndMonthDay]_v[VERSION].csv
 ```
 
 **Examples:**
-- `Pinterest_Next40_PostIdeas_June9_June13_v13.csv` ✅
-- `Pinterest_Next40_PostIdeas_June16_June20_v14.csv` ✅
+- `Pinterest_Next45_PostIdeas_July26_July30_v21.csv` ✅
+- `Pinterest_Next45_PostIdeas_Aug3_Aug7_v22.csv` ✅
 
 **Rules:**
-- `[PIN COUNT]` = total pins in the batch (always 40 for standard 5-day batch)
+- `[PIN COUNT]` = total pins in the batch (always 45 for standard 5-day batch)
 - Version number increments by +1 from the previous batch's version
 - Save directly to: `c:\Mithuranga\printerest-project\pinterest project\`
 - Do NOT output the full CSV content in the chat window — write directly to file and confirm
@@ -480,69 +429,69 @@ Pinterest_Next[PIN COUNT]_PostIdeas_[StartMonthDay]_[EndMonthDay]_v[VERSION].csv
 **Smart Pet Wellness (rotate, 3–4 per pin):**
 `#Wilderkind` `#AdventureDog` `#DogPhotography` `#CatPhotography` `#PetWellness` `#AnimalPhotography` `#WildlifePhotography` `#PredatorPortrait` + [breed-specific hashtag] + [location hashtag]
 
-**Nail Aesthetic & Art Inspo (rotate, 4–5 per pin):**
-`#NailInspo` `#NailAesthetic` `#GelNails` `#NailArt` `#QuietLuxuryNails` + [colour/trend hashtag e.g. `#ChromeNails` `#GlassNails` `#MattNails`] + [seasonal e.g. `#SummerNails` `#AutumnNails`]
-
-**Code. Build. Ship. (rotate, 4–5 per pin):**
+**Build. Scale. Ship. — Software Studio (rotate, 4–5 per pin):**
 `#FreelanceDev` `#BuildInPublic` `#SoloFounder` `#TechConsulting` `#RemoteWork` + [topic hashtag e.g. `#ClientAcquisition` `#FractionalCTO` `#SaaSFounder` `#StartupLife`]
 
 ---
 
-## 13. PERFORMANCE INTELLIGENCE (Updated June 12, 2026)
+## 13. PERFORMANCE INTELLIGENCE (Updated July 31, 2026)
 
 ### 🚀 Audience Growth
 | Date | Monthly Audience | Growth |
 |---|---|---|
 | June 4, 2026 | 99,000 | baseline |
-| June 9, 2026 | **115,000** | **+16% in 5 days** |
+| June 9, 2026 | 115,000 | +16% in 5 days |
+| July 22, 2026 | **220,000** | **+91% in 6 weeks — nearly 2x** |
+| July 28, 2026 | **253,000** | **+15% in 6 days — acceleration continues** |
 
-### Board Velocity (May 13 – June 12, 2026)
-| Board | Impressions | Saves | Save Rate | Trend |
-|---|---|---|---|---|
-| Smart Pet Wellness | **84,127** | **450** | 0.53% | ⬆️ New high — best board |
-| Future Living & Off-Grid Tech | **80,274** | **259** | 0.32% | ⬆️ Steady |
-| Build. Scale. Ship. | **9,248** | **28** | 0.30% | ⬆️ +87% saves vs prior period |
-| Nail Aesthetic & Art Inspo | **22** | **0** | — | 🆕 Brand new — needs visual upgrade |
-
-### Affinity Score Changes (June 4 → June 9, 2026)
-| Interest | June 4 | June 9 | Change |
+### Board Velocity (July 1 – July 31, 2026)
+| Board | Impressions | Saves | Trend |
 |---|---|---|---|
-| **Watercraft** | 5.858x | **5.925x** | ⬆️ +0.067 — still #1, growing |
-| **Metal Art** | 5.213x | 5.130x | ↘️ -0.083 — minor dip, stable |
-| **Campers & RV** | 4.910x | 4.766x | ↘️ -0.144 — softening, reduce priority |
-| **Aircraft** | 4.286x | 4.281x | → Stable |
-| **Illustration** | 1.382x | 1.405x | ⬆️ +0.023 — supports editorial nail content |
-| **Body Art** | 1.164x | 1.182x | ⬆️ +0.018 — nail board signal growing |
+| Future Living & Off-Grid Tech | **251,579** | **1,381** | ⬆️ #1 by far — dominating |
+| Smart Pet Wellness | **151,798** | **799** | ⬆️ #2, strong save rate |
+| Build. Scale. Ship. | **33,944** | **171** | ⬆️ Steady growth |
 
-### All-Time Top Pin Themes (by Impressions — updated June 12)
+### Affinity Score Changes (Jun → Jul 22 → Jul 28, 2026)
+| Interest | Jun | Jul 22 | Jul 28 | Change Jul 28 |
+|---|---|---|---|---|
+| **Campers & RV** | 4.910x | 6.328x | **7.140x** | ⬆️ +0.812 — **NEW #1 OVERALL** |
+| **Watercraft** | 5.858x | 6.491x | **6.759x** | ⬆️ +0.268 — still surging |
+| **Metal Art** | 5.213x | 5.288x | **5.760x** | ⬆️ +0.472 — significant jump |
+| **Aircraft** | 4.286x | 4.278x | **4.463x** | ⬆️ +0.185 |
+| **Woodworking** | 3.728x | 3.710x | **3.943x** | ⬆️ +0.233 |
+
+### All-Time Top Pin Themes (by Impressions — updated July 31)
 | Rank | Visual Formula | Impressions | Board |
 |---|---|---|---|
-| 1 | Glass + watercraft + water mirror symmetry | **20,115** | Future Living |
-| 2 | Mirrored glass on still water | 8,725 | Future Living |
-| 3 | Modular floating glass dock platform | 8,334 | Future Living |
-| 4 | Wilderkind predator + twilight rim-light | 8,259 | Smart Pet |
-| 5 | PNW glass + amber interior | 6,114 | Future Living |
+| 1 | Glass + watercraft + water mirror symmetry | **25,948** | Future Living |
+| 2 | Architecture/landscape pin | 21,819 | Future Living |
+| 3 | Architecture/landscape pin | 21,286 | Future Living |
+| 4 | Architecture/vehicle pin | 12,418 | Future Living |
+| 5 | Wilderkind predator + twilight rim-light | 12,268 | Smart Pet |
 
-**Key takeaway:** The #1 pin grew from 16,081 → **20,115 impressions** — it's still gaining. Water reflection formula is compounding. Double down every batch.
+**Key takeaway:** Top pin now at 25,948 impressions and still compounding. Campers & RV just overtook Watercraft as the single highest-affinity interest at 7.14x — this is the highest affinity score we have ever recorded. Every batch must lead with Campers & RV content.
 
 ---
 
 ## 14. QUALITY CHECKLIST (Run Before Saving CSV)
 
 ```
-[ ] Exactly 40 rows (pins 1–40) present — no truncation, no skipped lines
-[ ] Timeline is correct: Day 1 = Monday, Day 5 = Friday
+[ ] Exactly 45 rows (pins 1–45) present — no truncation, no skipped lines
+[ ] Timeline is correct: 5 days, 9 pins per day
 [ ] Every Title contains the current year + visual descriptor + category keyword
 [ ] Every Description starts with "Save this for your [specific] board."
 [ ] Every Description ends with 5–7 hashtags
-[ ] Every AI Prompt contains "No people visible" (exception: nail pins — check hand-only framing)
+[ ] Every AI Prompt contains "No people visible"
 [ ] No species/breed repeated in Wilderkind pins within the same batch
 [ ] No US location repeated more than 2x per board per batch
-[ ] Tier 1 affinity elements (Watercraft, Metal Art) appear in ≥40% of Future Living pins
+[ ] Tier 1 affinity elements (Campers & RV 7.14x + Watercraft 6.76x) appear in ≥50% of Future Living pins — Campers & RV now #1, must be present in every batch
+[ ] VARIETY CHECK: No more than 2 glass boathouse / mirror water pins per batch
+[ ] VARIETY CHECK: No more than 2 Corten steel cantilever pins per batch
+[ ] VARIETY CHECK: Build.Scale.Ship Slot-7 and Slot-9 must target DIFFERENT client sectors
 [ ] Every SE-Lifestyle workspace pin has named revenue figures on monitor screens
 [ ] Every SE-Infographic uses the dark charcoal (#0d0d1a) colour specification
 [ ] File named correctly and saved to project folder — NOT output in full to chat window
-[ ] Status column = "Ready" for all 40 rows
+[ ] Status column = "Ready" for all 45 rows
 ```
 
 ---
@@ -552,7 +501,9 @@ Pinterest_Next[PIN COUNT]_PostIdeas_[StartMonthDay]_[EndMonthDay]_v[VERSION].csv
 | Version | Date | Change |
 |---|---|---|
 | v1.0 | June 8, 2026 | Initial document created from v9–v13 batch learnings |
-| v1.1 | June 12, 2026 | Code board repositioned: freelance → software studio (agency+products). Nail prompts upgraded to ultra-photorealistic macro with 3D/holographic/cat-eye trending formats. Board renamed to 'Build. Scale. Ship. — Software Studio'. Performance intel updated to 115k audience milestone. |
+| v1.1 | June 12, 2026 | Code board repositioned: freelance → software studio (agency+products). Nail prompts upgraded. Board renamed to 'Build. Scale. Ship. — Software Studio'. Performance intel updated to 115k audience. |
+| v1.2 | July 25, 2026 | **Major update:** Nail board discontinued. Schedule updated to 9 slots/day across 3 boards (Future Living + Smart Pet + Build.Scale.Ship), 45 pins/5-day batch. Mon–Fri restriction removed — now flexible 5-day batch. Audience updated to 220k. Campers & RV elevated to Tier 1 (6.328x — major surge). Watercraft updated to 6.491x. Variety rules added to Quality Checklist to prevent repetitive visual formulas. |
+| v1.3 | July 31, 2026 | **Affinity update:** Campers & RV overtook Watercraft as #1 affinity at 7.140x (all-time high). Watercraft updated to 6.759x. Metal Art jumped to 5.760x. Aircraft up to 4.463x. Woodworking up to 3.943x. Audience updated to 253,000. Board velocity updated with July full-month data. Top pin impressions updated to 25,948. |
 
 ---
 
