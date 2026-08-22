@@ -281,7 +281,7 @@ Anchor visual prompts in recognisable aspirational US settings. Mix across the b
 
 **What the studio offers (use these in content):**
 
-**Destination links:** Use `https://lumicore-labs.com/` for `Build. Scale. Ship.` pins. Use `https://www.pinterest.com/wildbuild/` for all other boards.
+**Destination links:** Use `https://lumicore-labs.com/` for `Build. Scale. Ship.` pins. Use `https://www.pinterest.com/wildbuild/` for all other boards. Add a unique batch/post tracking query to every upload link so pins in the same bulk CSV do not share an identical link.
 **Pin Architecture per day:**
 
 **Infographic Design Specification:**

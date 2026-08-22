@@ -52,8 +52,9 @@ def publish_date(posting_day):
     return datetime.strptime(f"{match.group(1)} {match.group(2)} 2026", "%b %d %Y").strftime("%Y-%m-%d")
 
 
-def destination(board):
-    return SOFTWARE_DESTINATION if board == "Build. Scale. Ship." else DESTINATION
+def destination(board, post_number):
+    base_url = SOFTWARE_DESTINATION if board == "Build. Scale. Ship." else DESTINATION
+    return f"{base_url}?utm_source=pinterest&utm_medium=bulk_upload&utm_campaign=v25_pin_{post_number:02d}"
 
 
 with open(SOURCE, newline="", encoding="utf-8-sig") as source_file:
@@ -76,7 +77,7 @@ with open(SOURCE, newline="", encoding="utf-8-sig") as source_file:
                 "Pinterest board": row["Pinterest board"],
                 "Thumbnail": "",
                 "Description": row["Description"],
-                "Link": destination(row["Pinterest board"]),
+                "Link": destination(row["Pinterest board"], post_number),
                 "Publish date": publish_date(row["Posting Day"]),
                 "Keywords": description_keywords,
             }
