@@ -1,7 +1,7 @@
 # Pinterest Content Generation Brief — Master SOP
 **Account:** `pinterest.com/wildbuild`
 **Reader:** Claude Sonnet (AI agent) — this document is your primary instruction set for every batch session.
-**Last Updated:** July 31, 2026 (v1.3)
+**Last Updated:** August 22, 2026 (v1.6)
 
 ---
 
@@ -38,7 +38,7 @@ Use this prompt at the start of every new batch session:
 ```
 Role: You are a Pinterest Growth Scientist and AI Content Strategist
 for the @wildbuild Pinterest account. Your task is to generate a new
-5-day content plan (45 pins, 9 pins/day, 5-day batch).
+5-day content plan (30 pins, 6 pins/day, 5-day batch).
 
 Follow the instructions in Content-Brief-for-Claude.md exactly.
 
@@ -49,7 +49,7 @@ Extract top pin performance, board velocity, and affinity score changes.
 Step 2: Cross-reference top pin IDs with previous PostIdeas CSVs to
 identify the winning visual formulas to replicate.
 
-Step 3: Generate the 45-pin CSV for [INSERT DAY 1 DATE] to
+Step 3: Generate the 30-pin CSV for [INSERT DAY 1 DATE] to
 [INSERT DAY 5 DATE] following the CSV schema in the brief exactly.
 
 Output the file to the project folder using the naming convention in
@@ -68,7 +68,7 @@ the brief. Do not output the full CSV in the chat window.
 | **Top US Metros** | Los Angeles (6%), New York (5%), Seattle-Tacoma (2.8%), Washington DC (2.5%), San Francisco (2.5%), Chicago (2.3%) |
 | **Gender Split** | Male 48.9% / Female 44% / Other 7.1% |
 | **Primary Age Bracket** | 25–34 (34.8%), then 35–44 (20.6%) |
-| **Total Monthly Audience** | **253,000** (jumped again — +15% in one week, from 220k Jul 22 → 253k Jul 28) |
+| **Total Monthly Audience** | **365,000** (up from 338k Aug 15 → 365k Aug 19 — +8% in 4 days; **3.7x growth since June**) |
 | **Primary Device** | Web (46.8%), Android Mobile (40.6%), iPhone (33.1%) |
 
 ### Software Company Identity (for Code board)
@@ -96,15 +96,15 @@ The Code board is a **direct lead generation channel**. Every pin must speak to 
 |---|---|---|---|
 | `Future Living & Off-Grid Tech` | `pinterest.com/wildbuild/future-living-off-grid-tech/` | Slot-1 (7:30am) + Slot-3 (11:00am) + Slot-5 (2:00pm) | Static Image |
 | `Smart Pet Wellness` | `pinterest.com/wildbuild/smart-pet-wellness-eco-tech-quiet-luxury/` | Slot-2 (9:30am) + Slot-4 (12:30pm) + Slot-6 (3:30pm) | Static Image |
-| `Build. Scale. Ship. — Software Studio` | `pinterest.com/wildbuild/build-scale-ship-software-studio/` | Slot-7 (6:30pm) + Slot-8 (9:00pm) + Slot-9 (10:00pm) | Static Image |
 
-> ⚠️ **Nail Aesthetic board DISCONTINUED** (effective July 2026). 3 active boards only.
+> ⚠️ **Build. Scale. Ship. board HALTED** (effective August 2026). Sri Lankan tourism board (Arachi Tours) planned as replacement — details TBD.
+> ⚠️ **Nail Aesthetic board DISCONTINUED** (effective July 2026).
 
 ---
 
 ## 3. DAILY POSTING SCHEDULE
 
-**9 pins per day · 5-day batch · 45 pins per batch**
+**6 pins per day · 5-day batch · 30 pins per batch**
 All times are **US Eastern Standard Time (EST)**.
 
 | Slot | Time (EST) | Board | Pin Sub-Type |
@@ -115,9 +115,6 @@ All times are **US Eastern Standard Time (EST)**.
 | Slot-4 | 12:30pm | Smart Pet Wellness | Adventure Dog |
 | Slot-5 | 2:00pm | Future Living & Off-Grid Tech | Floating / Cantilevered / New Structural Format |
 | Slot-6 | 3:30pm | Smart Pet Wellness | Adventure Dog or Indoor Luxury Cat |
-| Slot-7 | 6:30pm | Build. Scale. Ship. — Software Studio | SE-Lifestyle (workspace image) |
-| Slot-8 | 9:00pm | Build. Scale. Ship. — Software Studio | SE-Infographic (dark editorial) |
-| Slot-9 | 10:00pm | Build. Scale. Ship. — Software Studio | SE-Lifestyle (workspace image — different client type from Slot-7) |
 
 ---
 
@@ -127,26 +124,23 @@ These are the **multiplier scores** showing how much more likely our audience is
 
 > ⚠️ Always read the latest audience CSV at the start of each session and note any scores that have changed significantly (>0.3 change). Flag changes in your pre-generation analysis.
 
-> ⚠️ Updated July 31, 2026 — Campers & RV overtook Watercraft as #1 affinity. Massive continued surge. Double down on both.
+> ⚠️ Updated August 22, 2026 — Campers & RV at new all-time record 8.718x. All Tier 1/2 affinities stable-to-rising. Account consolidating strongly.
 
-### 🔴 Tier 1 — Hyper-Affinity (6x+): Must appear in ≥50% of Future Living pins
+### 🔴 Tier 1 — Hyper-Affinity (6x+): Must appear in ≥60% of Future Living pins
 | Interest | Affinity Score | Change | Application |
 |---|---|---|---|
-| **Campers & RV** | **7.140x** | ⬆️ +0.812 from Jul 22 — **NOW #1 OVERALL** | Ultra-luxury van builds, glass pod trailers, Airstream integrations, expedition pods, Land Cruiser builds, Patagonia RVs — **PRIORITY #1** |
-| **Watercraft** | **6.759x** | ⬆️ +0.268 from Jul 22 — still surging | Glass boathouses, floating platforms, custom lake docks, seaplane docks, pontoon architecture — **DOUBLE DOWN** |
+| **Campers & RV** | **8.718x** | ⬆️ +0.150 from Aug 15 — **NEW ALL-TIME RECORD, 6th consecutive rise** | Ultra-luxury van builds, glass pod trailers, Airstream integrations, expedition pods, Land Cruiser/Hilux/G-Wagon/Defender/Tacoma builds — **ABSOLUTE PRIORITY #1** |
+| **Watercraft** | **7.379x** | ↔️ -0.033 from Aug 15 — stable above 7x | Glass boathouses, floating platforms, custom lake docks, seaplane docks, pontoon architecture, houseboats — **DOUBLE DOWN** |
+| **Metal Art / Industrial** | **6.596x** | ↔️ +0.013 from Aug 15 — stable above 6.5x | Corten steel cladding, raw I-beam frames, welded steel facades, steel joinery — **≥40% of FL pins** |
 
-### 🟠 Tier 2 — High Affinity (5–6x): Target ≥25% of Future Living pins
+### 🟡 Tier 2 — Strong Affinity (4–6x): Weave through Future Living pins
 | Interest | Affinity Score | Change | Application |
 |---|---|---|---|
-| **Metal Art / Industrial** | **5.760x** | ⬆️ +0.472 from Jul 22 — significant jump | Corten steel cladding, raw I-beam frames, welded steel facades, steel joinery — increase frequency |
-
-### 🟡 Tier 3 — Strong Affinity (3–5x): Weave through Future Living pins
-| Interest | Affinity Score | Change | Application |
-|---|---|---|---|
-| **Aircraft** | **4.463x** | ⬆️ +0.185 from Jul 22 | Float planes moored at glass cabins, seaplane ramps, hangar-aesthetic buildings, Cessna 185 aesthetics |
-| **Woodworking** | **3.943x** | ⬆️ +0.233 from Jul 22 | Japanese joinery, live-edge slabs, timber frames, shou sugi ban decking |
-| **Exterior / Door Design** | **3.433x / 3.177x** | ⬆️ Slight rise | Architectural entrance sequences, threshold moments, exterior material details |
-| **Educational Architecture** | **3.958x** | → Stable | Parametric design, structural honesty, engineering-forward architecture |
+| **Cycling** | **5.457x** | ↔️ stable above 5.4x | Bikepacking-related van builds, gravel bike on expedition roof racks — weave as accent elements |
+| **Aircraft** | **4.880x** | ↔️ stable near 4.9x | Float planes moored at glass cabins, seaplane ramps, hangar-aesthetic buildings, Cessna 185/de Havilland Beaver aesthetics |
+| **Woodworking** | **4.386x** | ↔️ +0.017 — steady climb | Japanese joinery, live-edge slabs, timber frames, shou sugi ban decking |
+| **Exterior / Door Design** | **3.742x / 3.461x** | ⬆️ Continued rise | Architectural entrance sequences, threshold moments, exterior material details |
+| **Educational Architecture** | **3.695x** | ↔️ Stable | Parametric design, structural honesty, engineering-forward architecture |
 
 ### 🟢 Tier 4 — Moderate Affinity: Supporting context
 | Interest | Score | Notes |
@@ -380,13 +374,13 @@ Hyper-realistic 9:16 vertical photo, [Style Tag]. [Subject description in detail
 > ⚠️ Use these headers exactly, in this order, every batch. Do not add or remove columns.
 
 ```csv
-"Post #","Board","Title","Description","Alt Text","AI Prompt","In-App Text Hook","Status","Posting Day","Slot","SL Post Time"
+"Post #","Pinterest board","Title","Description","Alt Text","AI Prompt","In-App Text Hook","Status","Posting Day","Slot","SL Post Time"
 ```
 
 | Field | Rule |
 |---|---|
 | `Post #` | Sequential 1–45 (for standard 5-day batch) |
-| `Board` | Exact board name from Section 2 — copy-paste, no paraphrase |
+| `Pinterest board` | Exact board name from Section 2 — copy-paste, no paraphrase |
 | `Title` | See Section 8 — must include year (2026), specific visual, category keyword |
 | `Description` | Must start "Save this for your [specific] board." — 150–250 words + 5–7 hashtags |
 | `Alt Text` | 2–4 sentences, material/breed/light/landscape specific |
@@ -434,64 +428,62 @@ Pinterest_Next[PIN COUNT]_PostIdeas_[StartMonthDay]_[EndMonthDay]_v[VERSION].csv
 
 ---
 
-## 13. PERFORMANCE INTELLIGENCE (Updated July 31, 2026)
+## 13. PERFORMANCE INTELLIGENCE (Updated August 22, 2026)
 
 ### 🚀 Audience Growth
 | Date | Monthly Audience | Growth |
 |---|---|---|
-| June 4, 2026 | 99,000 | baseline |
-| June 9, 2026 | 115,000 | +16% in 5 days |
-| July 22, 2026 | **220,000** | **+91% in 6 weeks — nearly 2x** |
-| July 28, 2026 | **253,000** | **+15% in 6 days — acceleration continues** |
+| July 22, 2026 | **220,000** | baseline tracking |
+| July 28, 2026 | **253,000** | **+15% in 6 days** |
+| August 4, 2026 | **285,000** | **+12.6% in 7 days** |
+| August 15, 2026 | **338,000** | **+18.6% in 11 days** |
+| August 19, 2026 | **365,000** | **+8.0% in 4 days — 3.7x growth since June** |
 
-### Board Velocity (July 1 – July 31, 2026)
+### Board Velocity (July 23 – August 22, 2026)
 | Board | Impressions | Saves | Trend |
 |---|---|---|---|
-| Future Living & Off-Grid Tech | **251,579** | **1,381** | ⬆️ #1 by far — dominating |
-| Smart Pet Wellness | **151,798** | **799** | ⬆️ #2, strong save rate |
-| Build. Scale. Ship. | **33,944** | **171** | ⬆️ Steady growth |
+| Future Living & Off-Grid Tech | **418,152** | **2,749** | ⬆️ #1 by far — DOMINATING |
+| Smart Pet Wellness | **164,188** | **963** | ⬆️ #2, strong save rate |
 
-### Affinity Score Changes (Jun → Jul 22 → Jul 28, 2026)
-| Interest | Jun | Jul 22 | Jul 28 | Change Jul 28 |
+### Affinity Score Changes (Aug 4 → Aug 15 → Aug 19, 2026)
+| Interest | Aug 4 | Aug 15 | Aug 19 | Trend |
 |---|---|---|---|---|
-| **Campers & RV** | 4.910x | 6.328x | **7.140x** | ⬆️ +0.812 — **NEW #1 OVERALL** |
-| **Watercraft** | 5.858x | 6.491x | **6.759x** | ⬆️ +0.268 — still surging |
-| **Metal Art** | 5.213x | 5.288x | **5.760x** | ⬆️ +0.472 — significant jump |
-| **Aircraft** | 4.286x | 4.278x | **4.463x** | ⬆️ +0.185 |
-| **Woodworking** | 3.728x | 3.710x | **3.943x** | ⬆️ +0.233 |
+| **Campers & RV** | 7.769x | 8.568x | **8.718x** | ⬆️ NEW ALL-TIME RECORD — 6th consecutive rise |
+| **Watercraft** | 7.070x | 7.412x | **7.379x** | ↔️ stable above 7.3x |
+| **Metal Art** | 6.156x | 6.583x | **6.596x** | ↔️ stable above 6.5x |
+| **Cycling** | 5.064x | 5.435x | **5.457x** | ↔️ stable above 5.4x |
+| **Aircraft** | 4.643x | 4.883x | **4.880x** | ↔️ stable near 4.9x |
+| **Woodworking** | 4.130x | 4.369x | **4.386x** | ↔️ slow steady climb |
 
-### All-Time Top Pin Themes (by Impressions — updated July 31)
+### All-Time Top Pin Themes (by Impressions — updated August 22)
 | Rank | Visual Formula | Impressions | Board |
 |---|---|---|---|
-| 1 | Glass + watercraft + water mirror symmetry | **25,948** | Future Living |
-| 2 | Architecture/landscape pin | 21,819 | Future Living |
-| 3 | Architecture/landscape pin | 21,286 | Future Living |
-| 4 | Architecture/vehicle pin | 12,418 | Future Living |
-| 5 | Wilderkind predator + twilight rim-light | 12,268 | Smart Pet |
+| 1 | Glass + watercraft + water mirror symmetry | **41,537** | Future Living |
+| 2 | Architecture/landscape/vehicle pin | **38,897** | Future Living |
+| 3 | Architecture/landscape pin | **35,554** | Future Living |
+| 4 | Architecture/vehicle pin | **32,714** | Future Living |
+| 5 | Other FL / Smart Pet pin | **19,063** | Future Living / Smart Pet |
 
-**Key takeaway:** Top pin now at 25,948 impressions and still compounding. Campers & RV just overtook Watercraft as the single highest-affinity interest at 7.14x — this is the highest affinity score we have ever recorded. Every batch must lead with Campers & RV content.
+**Key takeaway:** All four top pins now above 32k impressions — the top is at 41,537. Campers & RV affinity at 8.718x is the highest ever recorded. Daily impressions now running 25–28k/day as the new normal. Campers & RV must appear in ≥60% of all FL pins.
 
 ---
 
 ## 14. QUALITY CHECKLIST (Run Before Saving CSV)
 
 ```
-[ ] Exactly 45 rows (pins 1–45) present — no truncation, no skipped lines
-[ ] Timeline is correct: 5 days, 9 pins per day
+[ ] Exactly 30 rows (pins 1–30) present — no truncation, no skipped lines
+[ ] Timeline is correct: 5 days, 6 pins per day
 [ ] Every Title contains the current year + visual descriptor + category keyword
 [ ] Every Description starts with "Save this for your [specific] board."
 [ ] Every Description ends with 5–7 hashtags
 [ ] Every AI Prompt contains "No people visible"
 [ ] No species/breed repeated in Wilderkind pins within the same batch
 [ ] No US location repeated more than 2x per board per batch
-[ ] Tier 1 affinity elements (Campers & RV 7.14x + Watercraft 6.76x) appear in ≥50% of Future Living pins — Campers & RV now #1, must be present in every batch
+[ ] Tier 1 affinity elements (Campers & RV 8.72x + Watercraft 7.38x + Metal Art 6.60x) appear in ≥60% of Future Living pins
 [ ] VARIETY CHECK: No more than 2 glass boathouse / mirror water pins per batch
 [ ] VARIETY CHECK: No more than 2 Corten steel cantilever pins per batch
-[ ] VARIETY CHECK: Build.Scale.Ship Slot-7 and Slot-9 must target DIFFERENT client sectors
-[ ] Every SE-Lifestyle workspace pin has named revenue figures on monitor screens
-[ ] Every SE-Infographic uses the dark charcoal (#0d0d1a) colour specification
 [ ] File named correctly and saved to project folder — NOT output in full to chat window
-[ ] Status column = "Ready" for all 45 rows
+[ ] Status column = "Ready" for all 30 rows
 ```
 
 ---
@@ -504,6 +496,9 @@ Pinterest_Next[PIN COUNT]_PostIdeas_[StartMonthDay]_[EndMonthDay]_v[VERSION].csv
 | v1.1 | June 12, 2026 | Code board repositioned: freelance → software studio (agency+products). Nail prompts upgraded. Board renamed to 'Build. Scale. Ship. — Software Studio'. Performance intel updated to 115k audience. |
 | v1.2 | July 25, 2026 | **Major update:** Nail board discontinued. Schedule updated to 9 slots/day across 3 boards (Future Living + Smart Pet + Build.Scale.Ship), 45 pins/5-day batch. Mon–Fri restriction removed — now flexible 5-day batch. Audience updated to 220k. Campers & RV elevated to Tier 1 (6.328x — major surge). Watercraft updated to 6.491x. Variety rules added to Quality Checklist to prevent repetitive visual formulas. |
 | v1.3 | July 31, 2026 | **Affinity update:** Campers & RV overtook Watercraft as #1 affinity at 7.140x (all-time high). Watercraft updated to 6.759x. Metal Art jumped to 5.760x. Aircraft up to 4.463x. Woodworking up to 3.943x. Audience updated to 253,000. Board velocity updated with July full-month data. Top pin impressions updated to 25,948. |
+| v1.4 | August 10, 2026 | **Major structure change:** Build.Scale.Ship board HALTED. Schedule reduced to 6 posts/day (3 Future Living + 3 Smart Pet = 30 pins/batch). Sri Lankan tourism board (Arachi Tours) planned as replacement — details TBD. Affinity updated: Campers & RV 7.769x (#1), Watercraft 7.070x, Metal Art 6.156x (crossed 6x, now Tier 1), Woodworking 4.130x (crossed 4x), Cycling 5.064x (new entrant). Audience at 285,000. Top pin at 31,902 impressions. |
+| v1.5 | August 18, 2026 | **Audience & Affinity surge:** Audience exploded to 338,000. Campers & RV spiked to 8.568x, Watercraft 7.412x, Metal Art 6.583x. Top pin approached 39k impressions. Future Living board at 394k monthly impressions. |
+| v1.6 | August 22, 2026 | **Continued acceleration:** Audience at 365,000 (3.7x since June). Campers & RV hit new all-time record 8.718x. All other Tier 1/2 affinities stable-to-rising. Top pin at 41,537 impressions. Daily impressions new baseline 25–28k/day. Future Living board at 418k monthly impressions. |
 
 ---
 
