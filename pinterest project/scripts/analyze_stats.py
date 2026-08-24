@@ -1,7 +1,11 @@
 import csv
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parent
 
 print("--- AUDIENCE INSIGHTS (July 5) ---")
-with open('audience-insights-total-audience-2026-07-05.csv', 'r', encoding='utf-8') as f:
+with open(ROOT / 'analytics' / 'audience-insights' / 'audience-insights-total-audience-2026-07-05.csv', 'r', encoding='utf-8') as f:
     # get audience size
     reader = csv.reader(f)
     next(reader)
@@ -27,7 +31,7 @@ with open('audience-insights-total-audience-2026-07-05.csv', 'r', encoding='utf-
         print(f"  {interest}: {aff}x")
 
 print("\n--- ANALYTICS OVERVIEW (July 7) ---")
-with open('Pinterest Analytics overview 20260607-20260707.csv', 'r', encoding='utf-8') as f:
+with open(ROOT / 'analytics' / 'pinterest-overviews' / 'Pinterest Analytics overview 20260607-20260707.csv', 'r', encoding='utf-8') as f:
     lines = f.readlines()
     start_idx = -1
     for i, line in enumerate(lines):

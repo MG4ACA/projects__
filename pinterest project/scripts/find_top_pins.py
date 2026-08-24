@@ -1,4 +1,5 @@
 import csv, os
+from pathlib import Path
 
 top_pins = [
     ('867646684482504284', 12137),
@@ -13,7 +14,7 @@ top_pins = [
     ('867646684484045188', 2660),
 ]
 
-folder = 'c:/Mithuranga/printerest-project/pinterest project'
+folder = Path(__file__).resolve().parent / 'content-planning' / 'post-ideas'
 csvs = [f for f in os.listdir(folder) if f.startswith('Pinterest_Next') and f.endswith('.csv')]
 
 for pin_id, imp in top_pins:

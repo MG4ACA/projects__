@@ -1,10 +1,12 @@
 import csv
 import re
 from datetime import datetime
+from pathlib import Path
 
 
-SOURCE = "Pinterest_Next30_PostIdeas_Aug23_Aug27_v25.csv"
-OUTPUT = "Pinterest_BulkUpload_Aug23_Aug27_v25.csv"
+ROOT = Path(__file__).resolve().parent.parent
+SOURCE = ROOT / "content-planning" / "post-ideas" / "Pinterest_Next30_PostIdeas_Aug23_Aug27_v25.csv"
+OUTPUT = ROOT / "content-planning" / "bulk-uploads" / "Pinterest_BulkUpload_Aug23_Aug27_v25.csv"
 DESTINATION = "https://www.pinterest.com/wildbuild/"
 SOFTWARE_DESTINATION = "https://lumicore-labs.com/"
 DRIVE_IDS = {
