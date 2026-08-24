@@ -9,6 +9,10 @@
 **Hosting:** Hostinger KVM1 VPS  
 **Primary audience:** Wild Build Pinterest audience, starting with Future Living / Off-grid Tech
 
+**Seasonal campaign:** Halloween Home Decor & DIY
+**Halloween destination:** `future.lumicore-labs.com/halloween`
+**Effort split:** 80% FutureNest validation, 20% Halloween seasonal test
+
 ## Objective
 
 Test whether the Wild Build Pinterest audience can produce measurable, commercially useful traffic for a small FutureNest-style website.
@@ -19,6 +23,8 @@ The experiment must answer four questions:
 2. Will those visitors read the content and click product links?
 3. Can we obtain at least one affiliate program that accepts the publisher and supports practical payouts from Sri Lanka?
 4. Is the resulting traffic and intent strong enough to justify continuing?
+
+In parallel, run a small Halloween campaign as a separate traffic test. Use the board **Halloween Home Decor & DIY**, prioritize home decor, porch styling, lighting, and DIY, and track it with the campaign name `halloween_2026`.
 
 This is a validation experiment, not a full product launch. We will not build an AI planner, login system, marketplace, mobile app, or second niche site during these 30 days.
 
@@ -56,6 +62,7 @@ These are decision thresholds, not revenue guarantees.
 5. Apply to or investigate Impact, Awin, and relevant direct merchant programs.
 6. Document Sri Lanka eligibility, payout method, minimum payout, tax requirements, and traffic-source restrictions.
 7. Define analytics events and UTM naming before publishing Pins.
+8. Create the Halloween board and prepare the `v25-halloween` Pin batch as a separate campaign.
 
 ### Deliverables
 
@@ -64,6 +71,7 @@ These are decision thresholds, not revenue guarantees.
 - Affiliate-program tracker with at least five candidates.
 - Analytics and event-tracking checklist completed.
 - One-page MVP scope approved for Week 2.
+- Halloween board created and the first 30 Pins ready for scheduling.
 
 ### Explicitly defer
 
@@ -119,6 +127,7 @@ Use the article brief template before writing. Every commercial article must exp
 - Link each Pin to the matching article, never directly to an affiliate merchant for this test.
 - Apply a consistent UTM campaign and record each Pin in the campaign tracker.
 - Publish across the strongest relevant Wild Build board, starting with Future Living / Off-grid Tech.
+- Publish a limited Halloween batch on **Halloween Home Decor & DIY**, using `halloween_2026` tracking and the `/halloween` destination once that page is live.
 
 ### Measurement cadence
 
