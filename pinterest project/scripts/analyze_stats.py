@@ -2,7 +2,7 @@ import csv
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 
 print("--- AUDIENCE INSIGHTS (July 5) ---")
 with open(ROOT / 'analytics' / 'audience-insights' / 'audience-insights-total-audience-2026-07-05.csv', 'r', encoding='utf-8') as f:

@@ -14,7 +14,7 @@ top_pins = [
     ('867646684484045188', 2660),
 ]
 
-folder = Path(__file__).resolve().parent / 'content-planning' / 'post-ideas'
+folder = Path(__file__).resolve().parent.parent / 'pinterest-post-generation' / 'post-ideas'
 csvs = [f for f in os.listdir(folder) if f.startswith('Pinterest_Next') and f.endswith('.csv')]
 
 for pin_id, imp in top_pins:
