@@ -1,1 +1,4 @@
 assets/images/
+postidea-studio/postideas.db
+__pycache__/
+*.py[cod]
