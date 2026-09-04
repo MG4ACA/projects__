@@ -22,14 +22,25 @@ def keywords(description):
 
 
 def iso_publish_date(value):
-    match = re.search(r"[A-Z][a-z]{2} ([A-Z][a-z]{2}) (\d{1,2})", str(value))
-    if match:
-        month = datetime.strptime(match.group(1), "%b").month
-        return date(2026, month, int(match.group(2))).isoformat()
+    text = str(value).replace("—", "-").strip()
+    text = re.sub(r"^Day \d+\s*-\s*", "", text)
+    for pattern in ("%A %B %d, %Y", "%a %b %d"):
+        try:
+            parsed = datetime.strptime(text, pattern)
+            return parsed.date().isoformat() if "%Y" in pattern else date(2026, parsed.month, parsed.day).isoformat()
+        except ValueError:
+            continue
     try:
-        return date.fromisoformat(str(value)).isoformat()
+        return date.fromisoformat(text).isoformat()
     except ValueError:
         return ""
+
+
+def direct_media_url(value):
+    """Convert a shared Google Drive file URL to its direct-download equivalent."""
+    value = str(value).strip()
+    match = re.search(r"drive\.google\.com/file/d/([^/?]+)", value)
+    return f"https://drive.google.com/uc?export=download&id={match.group(1)}" if match else value
 
 
 def export_csv(rows, batch_version, drive_urls):
@@ -42,7 +53,7 @@ def export_csv(rows, batch_version, drive_urls):
         base_url = "https://lumicore-labs.com/" if board == "Build. Scale. Ship. — Software Studio" else "https://www.pinterest.com/wildbuild/"
         writer.writerow({
             "Title": row["title"],
-            "Media URL": drive_urls[number],
+            "Media URL": direct_media_url(drive_urls[number]),
             "Pinterest board": board,
             "Thumbnail": "",
             "Description": row["description"],
@@ -53,10 +64,62 @@ def export_csv(rows, batch_version, drive_urls):
     return output.getvalue().encode("utf-8")
 
 
+IMAGE_HINTS = {
+    1: ("glass_cabin_on_alpine_lake",),
+    2: ("caracal_standing_in_desert",),
+    3: ("salon_booking_system",),
+    4: ("autumn_porch_at_blue_hour",),
+    5: ("compact_cycling_workshop",),
+    6: ("wirehaired_pointing_griffon",),
+    7: ("infographic_comparing_spreadshee",),
+    8: ("bats_ascending_wall",),
+    9: ("toyota_land_cruiser",),
+    10: ("lynx_standing_on_mountain",),
+    11: ("infographic_comparing_scaling",),
+    12: ("styled_shelf_with_heirloom",),
+    13: ("floating_sauna_on_lake",),
+    14: ("brittany_dog_running_on_dune",),
+    15: ("stop_losing_customers_to_follow-up",),
+    16: ("decorated_apartment_balcony",),
+    17: ("cabin_beside_lake_with_floatplane",),
+    18: ("clouded_leopard_on_mossy_branch",),
+    19: ("custom_app_removes_admin_work",),
+    20: ("candles_and_pumpkins_on_table",),
+    21: ("glass_observatory_pod_on_cliff",),
+    22: ("cat_resting_on_window_bench",),
+    23: ("inventory_visibility_infographic",),
+    24: ("halloween_entryway_with_pumpkin",),
+}
+
+
+def slugify(value):
+    value = re.sub(r"[^A-Za-z0-9]+", "_", str(value)).strip("_")
+    return re.sub(r"_+", "_", value)
+
+
+def build_image_rename_plan(folder, rows, batch_version):
+    files = [path for path in Path(folder).iterdir() if path.is_file() and path.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp"}]
+    plan = []
+    used_sources = set()
+    for row in rows:
+        number = int(row["post_number"])
+        matches = [path for path in files if any(hint.lower() in path.name.lower() for hint in IMAGE_HINTS.get(number, ()))]
+        source = matches[0] if len(matches) == 1 else None
+        target = Path(folder) / f"{batch_version}_{number:02d}_{slugify(row['title'])}{source.suffix.lower() if source else '.jpeg'}"
+        reason = "Matched by image hint" if source else "No unique match"
+        if source and source in used_sources:
+            source = None
+            reason = "Source matched more than once"
+        if source:
+            used_sources.add(source)
+        plan.append({"Post #": number, "Title": row["title"], "Current filename": source.name if source else "", "New filename": target.name, "Result": reason, "Source": source, "Target": target})
+    return plan
+
+
 st.title("Post Idea Studio")
 st.caption("Prepare prompts, review generated ideas, and export Pinterest bulk CSVs locally.")
 
-generate_tab, review_tab, export_tab = st.tabs(["Generate prompt", "Review ideas", "Export bulk CSV"])
+generate_tab, review_tab, rename_tab, export_tab = st.tabs(["Generate prompt", "Review ideas", "Rename images", "Export bulk CSV"])
 
 with generate_tab:
     st.subheader("Batch settings")
@@ -105,6 +168,37 @@ with review_tab:
                     "slot": row["Slot"], "sl_post_time": row["SL Post Time"], "status": row.get("Status", "Ready"),
                 } for _, row in edited.iterrows()])
                 st.success(f"Saved {len(edited)} ideas to batch {version}.")
+
+with rename_tab:
+    st.subheader("Rename generated images by post number")
+    st.caption("Load the planning CSV, preview the mapping, then rename the local image files to stable post-number filenames.")
+    rename_csv = st.file_uploader("Planning CSV", type="csv", key="rename_planning_upload")
+    image_folder = st.text_input("Image folder path", placeholder=r"C:\path\to\assets\images\v27")
+    rename_version = st.text_input("Batch version", value="v27", key="rename_version")
+    if rename_csv and image_folder:
+        rename_frame = pd.read_csv(rename_csv)
+        required = {"Post #", "Title"}
+        missing = required - set(rename_frame.columns)
+        folder = Path(image_folder).expanduser()
+        if missing:
+            st.error(f"Missing columns: {', '.join(sorted(missing))}")
+        elif not folder.is_dir():
+            st.error("Image folder does not exist.")
+        else:
+            rename_rows = [{"post_number": int(row["Post #"]), "title": row["Title"]} for _, row in rename_frame.iterrows()]
+            plan = build_image_rename_plan(folder, rename_rows, rename_version)
+            preview = pd.DataFrame([{key: item[key] for key in ("Post #", "Title", "Current filename", "New filename", "Result")} for item in plan])
+            st.dataframe(preview, use_container_width=True, hide_index=True)
+            unresolved = [item for item in plan if not item["Source"]]
+            existing_targets = [item["Target"].name for item in plan if item["Target"].exists() and item["Target"] != item["Source"]]
+            if unresolved:
+                st.error(f"{len(unresolved)} image mapping(s) need attention before renaming.")
+            elif existing_targets:
+                st.error(f"Target already exists: {', '.join(existing_targets)}")
+            elif st.button("Rename images", type="primary"):
+                for item in plan:
+                    item["Source"].rename(item["Target"])
+                st.success(f"Renamed {len(plan)} images in {folder}.")
 
 with export_tab:
     st.subheader("Create Pinterest bulk-upload CSV")
