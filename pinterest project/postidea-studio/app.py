@@ -64,31 +64,11 @@ def export_csv(rows, batch_version, drive_urls):
     return output.getvalue().encode("utf-8")
 
 
-IMAGE_HINTS = {
-    1: ("glass_cabin_on_alpine_lake",),
-    2: ("caracal_standing_in_desert",),
-    3: ("salon_booking_system",),
-    4: ("autumn_porch_at_blue_hour",),
-    5: ("compact_cycling_workshop",),
-    6: ("wirehaired_pointing_griffon",),
-    7: ("infographic_comparing_spreadshee",),
-    8: ("bats_ascending_wall",),
-    9: ("toyota_land_cruiser",),
-    10: ("lynx_standing_on_mountain",),
-    11: ("infographic_comparing_scaling",),
-    12: ("styled_shelf_with_heirloom",),
-    13: ("floating_sauna_on_lake",),
-    14: ("brittany_dog_running_on_dune",),
-    15: ("stop_losing_customers_to_follow-up",),
-    16: ("decorated_apartment_balcony",),
-    17: ("cabin_beside_lake_with_floatplane",),
-    18: ("clouded_leopard_on_mossy_branch",),
-    19: ("custom_app_removes_admin_work",),
-    20: ("candles_and_pumpkins_on_table",),
-    21: ("glass_observatory_pod_on_cliff",),
-    22: ("cat_resting_on_window_bench",),
-    23: ("inventory_visibility_infographic",),
-    24: ("halloween_entryway_with_pumpkin",),
+IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
+STOPWORDS = {
+    "the", "and", "with", "for", "from", "your", "this", "that", "into", "onto",
+    "over", "under", "near", "2026", "visible", "people", "cinematic", "style",
+    "photo", "photography", "hyper", "realistic", "vertical",
 }
 
 
@@ -97,22 +77,71 @@ def slugify(value):
     return re.sub(r"_+", "_", value)
 
 
-def build_image_rename_plan(folder, rows, batch_version):
-    files = [path for path in Path(folder).iterdir() if path.is_file() and path.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp"}]
-    plan = []
-    used_sources = set()
+def tokenize(text):
+    words = re.findall(r"[a-z]{4,}", str(text).lower())
+    return {word for word in words if word not in STOPWORDS}
+
+
+def filename_tokens(path):
+    stem = re.sub(r"[_\-]?\d{6,}$", "", path.stem)
+    return tokenize(stem.replace("_", " ").replace("-", " "))
+
+
+def auto_match_images(rows, files):
+    """Greedy best-first matching by shared keywords between Title/AI Prompt and filename."""
+    row_tokens = {row["post_number"]: tokenize(row["title"]) | tokenize(row.get("ai_prompt", "")) for row in rows}
+    file_tokens = {path: filename_tokens(path) for path in files}
+    candidates = sorted(
+        (
+            (len(rtoks & ftoks), number, path)
+            for number, rtoks in row_tokens.items()
+            for path, ftoks in file_tokens.items()
+            if rtoks & ftoks
+        ),
+        key=lambda item: item[0],
+        reverse=True,
+    )
+    matched, used_files = {}, set()
+    for score, number, path in candidates:
+        if number not in matched and path not in used_files:
+            matched[number] = (path, score)
+            used_files.add(path)
+    return matched
+
+
+def build_image_rename_preview(folder, rows, matches):
+    return pd.DataFrame([
+        {
+            "Post #": row["post_number"],
+            "Title": row["title"],
+            "Current filename": matches[row["post_number"]][0].name if row["post_number"] in matches else "",
+            "Match score": matches[row["post_number"]][1] if row["post_number"] in matches else 0,
+        }
+        for row in rows
+    ])
+
+
+def build_rename_plan(folder, rows, edited_frame, batch_version):
+    plan, seen_sources = [], {}
     for row in rows:
         number = int(row["post_number"])
-        matches = [path for path in files if any(hint.lower() in path.name.lower() for hint in IMAGE_HINTS.get(number, ()))]
-        source = matches[0] if len(matches) == 1 else None
-        target = Path(folder) / f"{batch_version}_{number:02d}_{slugify(row['title'])}{source.suffix.lower() if source else '.jpeg'}"
-        reason = "Matched by image hint" if source else "No unique match"
-        if source and source in used_sources:
+        selected_name = edited_frame.loc[edited_frame["Post #"] == number, "Current filename"].iloc[0]
+        source = Path(folder) / selected_name if selected_name else None
+        reason = ""
+        if not selected_name:
+            reason = "No file selected"
+        elif not source.is_file():
+            reason = "File not found"
             source = None
-            reason = "Source matched more than once"
-        if source:
-            used_sources.add(source)
-        plan.append({"Post #": number, "Title": row["title"], "Current filename": source.name if source else "", "New filename": target.name, "Result": reason, "Source": source, "Target": target})
+        elif selected_name in seen_sources:
+            reason = f"Also selected by post {seen_sources[selected_name]}"
+            source = None
+        else:
+            seen_sources[selected_name] = number
+            reason = "Ready"
+        suffix = source.suffix.lower() if source else ".jpeg"
+        target = Path(folder) / f"{batch_version}_{number:02d}_{slugify(row['title'])}{suffix}"
+        plan.append({"Post #": number, "Title": row["title"], "Current filename": selected_name, "New filename": target.name, "Result": reason, "Source": source, "Target": target})
     return plan
 
 
@@ -150,15 +179,18 @@ with review_tab:
     if upload:
         frame = pd.read_csv(upload)
         st.write(f"Loaded {len(frame)} rows.")
-        edited = st.data_editor(frame, use_container_width=True, num_rows="dynamic", height=500)
+        version_match = re.search(r"_v(\d+(?:-part\d+)?)", upload.name)
+        review_version = st.text_input("Batch version", value=f"v{version_match.group(1)}" if version_match else "v27", key="review_version")
+        edited = st.data_editor(frame, width="stretch", num_rows="dynamic", height=500)
         if st.button("Save batch to SQLite", type="primary"):
             required = {"Post #", "Pinterest board", "Title", "Description", "Posting Day", "Slot", "SL Post Time"}
             missing = required - set(edited.columns)
             if missing:
                 st.error(f"Missing columns: {', '.join(sorted(missing))}")
+            elif not review_version.strip():
+                st.error("Batch version is required.")
             else:
-                version_match = re.search(r"_v(\d+)", upload.name)
-                version = f"v{version_match.group(1)}" if version_match else st.text_input("Batch version", "v27")
+                version = review_version.strip()
                 start = date.today().isoformat()
                 batch_id = db.upsert_batch(version, start, start, 1, len(edited), len(edited), ", ".join(edited["Pinterest board"].dropna().unique()), "")
                 db.replace_post_ideas(batch_id, [{
@@ -171,7 +203,7 @@ with review_tab:
 
 with rename_tab:
     st.subheader("Rename generated images by post number")
-    st.caption("Load the planning CSV, preview the mapping, then rename the local image files to stable post-number filenames.")
+    st.caption("Load the planning CSV, review the auto-matched filenames, override any row using the dropdown, then rename.")
     rename_csv = st.file_uploader("Planning CSV", type="csv", key="rename_planning_upload")
     image_folder = st.text_input("Image folder path", placeholder=r"C:\path\to\assets\images\v27")
     rename_version = st.text_input("Batch version", value="v27", key="rename_version")
@@ -185,11 +217,28 @@ with rename_tab:
         elif not folder.is_dir():
             st.error("Image folder does not exist.")
         else:
-            rename_rows = [{"post_number": int(row["Post #"]), "title": row["Title"]} for _, row in rename_frame.iterrows()]
-            plan = build_image_rename_plan(folder, rename_rows, rename_version)
-            preview = pd.DataFrame([{key: item[key] for key in ("Post #", "Title", "Current filename", "New filename", "Result")} for item in plan])
-            st.dataframe(preview, use_container_width=True, hide_index=True)
-            unresolved = [item for item in plan if not item["Source"]]
+            rename_rows = [
+                {"post_number": int(row["Post #"]), "title": row["Title"], "ai_prompt": row.get("AI Prompt", "")}
+                for _, row in rename_frame.iterrows()
+            ]
+            files = [path for path in folder.iterdir() if path.is_file() and path.suffix.lower() in IMAGE_EXTENSIONS]
+            matches = auto_match_images(rename_rows, files)
+            st.write(f"Auto-matched {len(matches)} of {len(rename_rows)} posts to {len(files)} image files by keyword overlap.")
+            preview = build_image_rename_preview(folder, rename_rows, matches)
+            file_options = [""] + sorted(path.name for path in files)
+            editor_key = f"rename_editor_{rename_csv.name}_{rename_csv.size}_{folder}_{rename_version}_{len(rename_rows)}"
+            edited_preview = st.data_editor(
+                preview,
+                width="stretch",
+                hide_index=True,
+                disabled=["Post #", "Title", "Match score"],
+                column_config={"Current filename": st.column_config.SelectboxColumn("Current filename", options=file_options)},
+                key=editor_key,
+            )
+            plan = build_rename_plan(folder, rename_rows, edited_preview, rename_version)
+            result_preview = pd.DataFrame([{key: item[key] for key in ("Post #", "Title", "Current filename", "New filename", "Result")} for item in plan])
+            st.dataframe(result_preview, width="stretch", hide_index=True)
+            unresolved = [item for item in plan if item["Result"] != "Ready"]
             existing_targets = [item["Target"].name for item in plan if item["Target"].exists() and item["Target"] != item["Source"]]
             if unresolved:
                 st.error(f"{len(unresolved)} image mapping(s) need attention before renaming.")
@@ -211,13 +260,19 @@ with export_tab:
         batch = db.get_batch(selected_version)
         rows = db.get_post_ideas(batch["id"])
         st.write(f"{len(rows)} saved ideas in {selected_version}.")
-        links_text = st.text_area("Drive URLs, one per line as post number,url", placeholder="1,https://drive.google.com/uc?export=download&id=...\n2,https://drive.google.com/uc?export=download&id=...")
+        links_text = st.text_area(
+            "Drive URLs — either 'post number,url' per line, or a plain comma/newline-separated list assigned in post-number order",
+            placeholder="1,https://drive.google.com/uc?export=download&id=...\n2,https://drive.google.com/uc?export=download&id=...",
+        )
         drive_urls = {}
         for line in links_text.splitlines():
-            if "," in line:
-                number, url = line.split(",", 1)
-                if number.strip().isdigit():
-                    drive_urls[int(number.strip())] = url.strip()
+            match = re.match(r"\s*(\d+)\s*,\s*(\S+)", line)
+            if match:
+                drive_urls[int(match.group(1))] = match.group(2).strip()
+        if not drive_urls:
+            plain_urls = [url.strip() for url in re.split(r"[,\n]", links_text) if url.strip()]
+            for number, url in zip(sorted(row["post_number"] for row in rows), plain_urls):
+                drive_urls[number] = url
         missing = [row["post_number"] for row in rows if row["post_number"] not in drive_urls]
         if missing:
             st.warning(f"Missing Drive URLs for {len(missing)} posts.")
