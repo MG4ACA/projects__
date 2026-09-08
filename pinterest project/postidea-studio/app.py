@@ -1,11 +1,13 @@
 import csv
 import io
+import math
 import re
 import sys
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
 import pandas as pd
+import requests
 import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -41,6 +43,57 @@ def direct_media_url(value):
     value = str(value).strip()
     match = re.search(r"drive\.google\.com/file/d/([^/?]+)", value)
     return f"https://drive.google.com/uc?export=download&id={match.group(1)}" if match else value
+
+
+def preview_media_url(value):
+    """Drive's uc?export=download link returns an HTML page, not raw bytes, when embedded as <img> - use the googleusercontent CDN endpoint instead. Small width keeps the thumbnail lightweight and avoids Drive's rate limit."""
+    value = str(value).strip()
+    match = re.search(r"[?&]id=([^&]+)", value) or re.search(r"drive\.google\.com/file/d/([^/?]+)", value)
+    return f"https://lh3.googleusercontent.com/d/{match.group(1)}=w200" if match else value
+
+
+@st.cache_data(ttl=3600, max_entries=200)
+def fetch_preview_image(value):
+    """Download a small preview on the Streamlit server instead of from the browser."""
+    file_id = extract_drive_id(value)
+    if not file_id:
+        return None
+    urls = [
+        f"https://drive.google.com/thumbnail?id={file_id}&sz=w200",
+        f"https://drive.google.com/uc?export=download&id={file_id}",
+    ]
+    for url in urls:
+        try:
+            response = requests.get(url, timeout=15)
+            content_type = response.headers.get("content-type", "")
+            if response.ok and content_type.startswith("image/"):
+                return response.content
+        except requests.RequestException:
+            continue
+    return None
+
+
+def extract_drive_id(value):
+    value = str(value).strip()
+    match = re.search(r"[?&]id=([^&]+)", value) or re.search(r"drive\.google\.com/file/d/([^/?]+)", value)
+    return match.group(1) if match else None
+
+
+def fetch_drive_filenames(file_ids, api_key):
+    """Look up each Drive file's original filename via the Drive API - works for publicly-shared files with just an API key, no OAuth needed."""
+    names_by_id = {}
+    for file_id in file_ids:
+        try:
+            response = requests.get(
+                f"https://www.googleapis.com/drive/v3/files/{file_id}",
+                params={"fields": "name", "key": api_key},
+                timeout=10,
+            )
+            if response.ok:
+                names_by_id[file_id] = response.json().get("name", "")
+        except requests.RequestException:
+            continue
+    return names_by_id
 
 
 def export_csv(rows, batch_version, drive_urls):
@@ -273,7 +326,67 @@ with export_tab:
             plain_urls = [url.strip() for url in re.split(r"[,\n]", links_text) if url.strip()]
             for number, url in zip(sorted(row["post_number"] for row in rows), plain_urls):
                 drive_urls[number] = url
-        missing = [row["post_number"] for row in rows if row["post_number"] not in drive_urls]
+
+        with st.expander("Auto-match images to posts by their original Drive filename (recommended)"):
+            st.caption(
+                "Instead of relying on the order links were copied in, this looks up each file's real name via the "
+                f"Drive API and matches it using the '{selected_version}_NN_...' pattern from the Rename images step."
+            )
+            api_key = st.text_input("Google Drive API key", type="password", key=f"drive_api_key_{selected_version}")
+            raw_urls = [url.rstrip(",") for url in re.findall(r"https?://\S*drive\.google\.com/\S+", links_text)]
+            if st.button("Auto-match by filename", disabled=not (api_key and raw_urls)):
+                file_ids = [extract_drive_id(url) for url in raw_urls]
+                url_by_id = {extract_drive_id(url): url for url in raw_urls}
+                names_by_id = fetch_drive_filenames([f for f in file_ids if f], api_key)
+                pattern = re.compile(rf"{re.escape(selected_version)}_(\d+)_")
+                matched, unmatched = 0, []
+                for file_id, name in names_by_id.items():
+                    number_match = pattern.search(name)
+                    if number_match:
+                        st.session_state[f"export_url_{selected_version}_{int(number_match.group(1))}"] = url_by_id[file_id]
+                        matched += 1
+                    else:
+                        unmatched.append(name or file_id)
+                st.success(f"Matched {matched} of {len(names_by_id)} images by filename.")
+                if unmatched:
+                    st.warning(f"Couldn't parse a post number from: {', '.join(unmatched)}")
+
+        st.divider()
+        st.subheader("Preview before export")
+        st.caption(
+            "Drive's 'copy links' order isn't guaranteed to match post order. "
+            "Check every thumbnail against its title/description below, and fix the Drive URL on any mismatched row before generating the CSV."
+        )
+        sorted_rows = sorted(rows, key=lambda row: row["post_number"])
+        columns_per_row = 10
+        with st.form(f"preview_form_{selected_version}"):
+            for start in range(0, len(sorted_rows), columns_per_row):
+                for col, row in zip(st.columns(columns_per_row), sorted_rows[start:start + columns_per_row]):
+                    number = row["post_number"]
+                    with col:
+                        st.markdown(f"**#{number}**  \n{row['title']}")
+                        url = st.session_state.get(f"export_url_{selected_version}_{number}", drive_urls.get(number, ""))
+                        if url:
+                            image_bytes = fetch_preview_image(url)
+                            if image_bytes:
+                                st.image(image_bytes, width="stretch")
+                            else:
+                                st.error("Could not load image preview — check the URL.")
+                        else:
+                            st.warning("No Drive URL assigned.")
+                        st.text_input(
+                            "Drive URL", value=url, key=f"export_url_{selected_version}_{number}", label_visibility="collapsed"
+                        )
+                        description = row["description"]
+                        st.caption(description[:60] + ("…" if len(description) > 60 else ""))
+            st.form_submit_button("Apply URL edits")
+        for row in sorted_rows:
+            number = row["post_number"]
+            edited_value = st.session_state.get(f"export_url_{selected_version}_{number}")
+            if edited_value is not None:
+                drive_urls[number] = edited_value.strip()
+
+        missing = [row["post_number"] for row in rows if not drive_urls.get(row["post_number"])]
         if missing:
             st.warning(f"Missing Drive URLs for {len(missing)} posts.")
         if st.button("Prepare bulk CSV", type="primary", disabled=bool(missing)):
