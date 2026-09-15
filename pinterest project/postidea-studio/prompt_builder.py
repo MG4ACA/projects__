@@ -23,7 +23,12 @@ Active boards: {board_text}
 Follow pinterest-post-generation/Content-Brief-for-Claude.md exactly.
 Read the latest analytics and audience CSVs before writing.
 Use the exact board names above. Generate the internal planning CSV with this exact header:
-\"Post #\",\"Pinterest board\",\"Title\",\"Description\",\"Alt Text\",\"AI Prompt\",\"In-App Text Hook\",\"Status\",\"Posting Day\",\"Slot\",\"SL Post Time\"
+\"Post #\",\"Pinterest board\",\"Title\",\"Description\",\"Alt Text\",\"AI Prompt\",\"In-App Text Hook\",\"Status\",\"Posting Day\",\"Slot\",\"SL Post Time\",\"Landing Page\"
+
+For \"Landing Page\": only used for \"Future Living & Off-Grid Tech\" and \"Halloween Home Decor & DIY\" pins (FutureNest destinations).
+Choose one of: off-grid, tiny-homes, smart-home, index, halloween \u2014 whichever page on future.lumicore-labs.com best matches the pin's specific topic.
+"Smart Pet Wellness | Eco-Tech & Quiet Luxury" pins always route to future.lumicore-labs.com/pet-wellness automatically — leave Landing Page blank for that board.
+Leave blank for Build. Scale. Ship. pins too.
 
 Theme or campaign notes:
 {theme_notes or 'Use the strongest current themes from analytics.'}

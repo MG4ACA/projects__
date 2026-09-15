@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS post_ideas (
     status TEXT NOT NULL DEFAULT 'draft',
     media_drive_id TEXT,
     notes TEXT,
+    landing_page TEXT,
     UNIQUE(batch_id, post_number)
 );
 """
@@ -56,6 +57,14 @@ def get_connection():
 def init_db():
     with get_connection() as connection:
         connection.executescript(SCHEMA)
+        _migrate(connection)
+
+
+def _migrate(connection):
+    """Add columns introduced after a database file already existed."""
+    existing = {row["name"] for row in connection.execute("PRAGMA table_info(post_ideas)")}
+    if "landing_page" not in existing:
+        connection.execute("ALTER TABLE post_ideas ADD COLUMN landing_page TEXT")
 
 
 def upsert_batch(version, start_date, end_date, days, pins_per_day, total_pins, boards, theme_notes):
@@ -86,18 +95,18 @@ def get_batch(version):
 
 def replace_post_ideas(batch_id, rows):
     """rows: list of dicts keyed by post_number, board, title, description, alt_text,
-    ai_prompt, in_app_text_hook, posting_day, slot, sl_post_time, status."""
+    ai_prompt, in_app_text_hook, posting_day, slot, sl_post_time, status, landing_page."""
     with get_connection() as connection:
         connection.execute("DELETE FROM post_ideas WHERE batch_id = ?", (batch_id,))
         connection.executemany(
             """
             INSERT INTO post_ideas
                 (batch_id, post_number, board, title, description, alt_text, ai_prompt,
-                 in_app_text_hook, posting_day, slot, sl_post_time, status)
+                 in_app_text_hook, posting_day, slot, sl_post_time, status, landing_page)
             VALUES (:batch_id, :post_number, :board, :title, :description, :alt_text, :ai_prompt,
-                    :in_app_text_hook, :posting_day, :slot, :sl_post_time, :status)
+                    :in_app_text_hook, :posting_day, :slot, :sl_post_time, :status, :landing_page)
             """,
-            [{**row, "batch_id": batch_id} for row in rows],
+            [{**row, "batch_id": batch_id, "landing_page": row.get("landing_page", "")} for row in rows],
         )
 
 

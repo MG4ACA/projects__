@@ -96,6 +96,24 @@ def fetch_drive_filenames(file_ids, api_key):
     return names_by_id
 
 
+FUTURENEST_PAGES = {"off-grid", "tiny-homes", "smart-home", "index", "halloween", "pet-wellness"}
+
+
+def destination_url(board, landing_page):
+    """FutureNest gets Future Living / Halloween / Pet Wellness traffic; Software Studio keeps its own domain."""
+    if board == "Build. Scale. Ship. — Software Studio":
+        return "https://lumicore-labs.com/"
+    if board == "Halloween Home Decor & DIY":
+        return "https://future.lumicore-labs.com/halloween"
+    if board == "Smart Pet Wellness | Eco-Tech & Quiet Luxury":
+        return "https://future.lumicore-labs.com/pet-wellness"
+    if board == "Future Living & Off-Grid Tech":
+        page = (landing_page or "").strip().lower()
+        slug = page if page in FUTURENEST_PAGES else "off-grid"
+        return "https://future.lumicore-labs.com/" if slug == "index" else f"https://future.lumicore-labs.com/{slug}"
+    return "https://www.pinterest.com/wildbuild/"
+
+
 def export_csv(rows, batch_version, drive_urls):
     output = io.StringIO()
     writer = csv.DictWriter(output, fieldnames=["Title", "Media URL", "Pinterest board", "Thumbnail", "Description", "Link", "Publish date", "Keywords"])
@@ -103,7 +121,8 @@ def export_csv(rows, batch_version, drive_urls):
     for row in rows:
         number = int(row["post_number"])
         board = row["board"]
-        base_url = "https://lumicore-labs.com/" if board == "Build. Scale. Ship. — Software Studio" else "https://www.pinterest.com/wildbuild/"
+        landing_page = row["landing_page"] if "landing_page" in row.keys() else ""
+        base_url = destination_url(board, landing_page)
         writer.writerow({
             "Title": row["title"],
             "Media URL": direct_media_url(drive_urls[number]),
@@ -251,6 +270,7 @@ with review_tab:
                     "description": row["Description"], "alt_text": row.get("Alt Text", ""), "ai_prompt": row.get("AI Prompt", ""),
                     "in_app_text_hook": row.get("In-App Text Hook", ""), "posting_day": row["Posting Day"],
                     "slot": row["Slot"], "sl_post_time": row["SL Post Time"], "status": row.get("Status", "Ready"),
+                    "landing_page": row.get("Landing Page", ""),
                 } for _, row in edited.iterrows()])
                 st.success(f"Saved {len(edited)} ideas to batch {version}.")
 

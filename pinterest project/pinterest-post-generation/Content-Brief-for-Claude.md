@@ -281,7 +281,16 @@ Anchor visual prompts in recognisable aspirational US settings. Mix across the b
 
 **What the studio offers (use these in content):**
 
-**Destination links:** Use `https://lumicore-labs.com/` for `Build. Scale. Ship.` pins. Use `https://www.pinterest.com/wildbuild/` for all other boards. Add a unique batch/post tracking query to every upload link so pins in the same bulk CSV do not share an identical link.
+**Destination links:**
+
+- `Build. Scale. Ship. — Software Studio` → `https://lumicore-labs.com/`
+- `Future Living & Off-Grid Tech` → FutureNest, page chosen per pin (see Landing Page below): `https://future.lumicore-labs.com/off-grid`, `/tiny-homes`, `/smart-home`, or `/` (index)
+- `Halloween Home Decor & DIY` → `https://future.lumicore-labs.com/halloween`
+- `Smart Pet Wellness | Eco-Tech & Quiet Luxury` → `https://future.lumicore-labs.com/pet-wellness` (all sub-types — Wilderkind, Adventure Dog, Indoor Luxury Cat — route here; the page covers smart pet tech and eco-conscious pet products, not the pin's photography subject itself)
+
+Add a unique batch/post tracking query to every upload link so pins in the same bulk CSV do not share an identical link. Post Idea Studio's export step applies this routing automatically from the board name and the `Landing Page` field — do not hardcode a different link in generated CSVs.
+
+**Landing Page field (Future Living & Halloween pins only):** every row for these two boards must include a `Landing Page` value — one of `off-grid`, `tiny-homes`, `smart-home`, `index`, `halloween` — chosen to match the pin's specific topic, not just the board. A pontoon-cabin/off-grid-tech pin gets `off-grid`; a small-footprint-cabin-living pin gets `tiny-homes`; a home-automation/energy-tech pin gets `smart-home`; a general or mixed pin gets `index`. Smart Pet Wellness always routes to `pet-wellness` automatically, so leave this field blank for that board. Leave blank for Build. Scale. Ship. pins too.
 **Pin Architecture per day:**
 
 **Infographic Design Specification:**
@@ -343,6 +352,7 @@ Settings: Modern studio office, glass cabin, premium co-working space, rooftop s
 - Must include: 5–7 hashtags at the end, inline with the description text
 - Include brand/lifestyle terms where relevant: EcoFlow, Starlink, Wilderkind, Jackery, off-grid
 - No destination URLs
+- For Future Living, Halloween, and Smart Pet Wellness pins (all now link to FutureNest, not the profile): the closing sentence should verbally imply there is more to see off-platform — e.g. "the full build breakdown is on the blog", "see the complete setup and gear list", or "the full gear comparison is on the blog" — without naming a URL. This primes the outbound click now that the destination is a real content page, not a profile.
 
 ### Alt Text
 
@@ -402,7 +412,7 @@ Hyper-realistic 9:16 vertical photo, [Style Tag]. [Subject description in detail
 > ⚠️ Use these headers exactly, in this order, every batch. Do not add or remove columns.
 
 ```csv
-"Post #","Pinterest board","Title","Description","Alt Text","AI Prompt","In-App Text Hook","Status","Posting Day","Slot","SL Post Time"
+"Post #","Pinterest board","Title","Description","Alt Text","AI Prompt","In-App Text Hook","Status","Posting Day","Slot","SL Post Time","Landing Page"
 ```
 
 This is the internal planning CSV. After images are uploaded to the versioned Google Drive folder, convert it to Pinterest's upload CSV:
@@ -411,19 +421,20 @@ This is the internal planning CSV. After images are uploaded to the versioned Go
 Title,Media URL,Pinterest board,Thumbnail,Description,Link,Publish date,Keywords
 ```
 
-| Field              | Rule                                                                                              |
-| ------------------ | ------------------------------------------------------------------------------------------------- |
-| `Post #`           | Sequential 1–45 (for standard 5-day batch)                                                        |
-| `Pinterest board`  | Exact board name from Section 2 — copy-paste, no paraphrase                                       |
-| `Title`            | Must include year (2026), specific visual, category keyword                                       |
-| `Description`      | Must start "Save this for your [specific] board." — 150–250 words + 5–7 hashtags                  |
-| `Alt Text`         | 2–4 sentences, material/breed/light/landscape specific                                            |
-| `AI Prompt`        | Full detailed prompt following Section 9 structure                                                |
-| `In-App Text Hook` | 4–7 words, punchy, not generic                                                                    |
-| `Status`           | Always `"Ready"`                                                                                  |
-| `Posting Day`      | Format: `"Day 1 — Mon June 9"` (full weekday + date)                                              |
-| `Slot`             | One of: `Slot-1` / `Slot-2` / `Slot-3` / `Slot-4` / `Slot-5` / `Slot-6` / `Slot-7` / `Slot-8`     |
-| `SL Post Time`     | EST time: `7:30am` / `9:30am` / `11:00am` / `12:30pm` / `2:00pm` / `3:30pm` / `6:30pm` / `9:00pm` |
+| Field              | Rule                                                                                                                                                                                                                                |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Post #`           | Sequential 1–45 (for standard 5-day batch)                                                                                                                                                                                          |
+| `Pinterest board`  | Exact board name from Section 2 — copy-paste, no paraphrase                                                                                                                                                                         |
+| `Title`            | Must include year (2026), specific visual, category keyword                                                                                                                                                                         |
+| `Description`      | Must start "Save this for your [specific] board." — 150–250 words + 5–7 hashtags                                                                                                                                                    |
+| `Alt Text`         | 2–4 sentences, material/breed/light/landscape specific                                                                                                                                                                              |
+| `AI Prompt`        | Full detailed prompt following Section 9 structure                                                                                                                                                                                  |
+| `In-App Text Hook` | 4–7 words, punchy, not generic                                                                                                                                                                                                      |
+| `Status`           | Always `"Ready"`                                                                                                                                                                                                                    |
+| `Posting Day`      | Format: `"Day 1 — Mon June 9"` (full weekday + date)                                                                                                                                                                                |
+| `Slot`             | One of: `Slot-1` / `Slot-2` / `Slot-3` / `Slot-4` / `Slot-5` / `Slot-6` / `Slot-7` / `Slot-8`                                                                                                                                       |
+| `SL Post Time`     | EST time: `7:30am` / `9:30am` / `11:00am` / `12:30pm` / `2:00pm` / `3:30pm` / `6:30pm` / `9:00pm`                                                                                                                                   |
+| `Landing Page`     | Future Living/Halloween pins only: one of `off-grid`, `tiny-homes`, `smart-home`, `index`, `halloween` matching the pin topic. Blank for Smart Pet Wellness (always routes to `pet-wellness` automatically) and Build. Scale. Ship. |
 
 For the Pinterest upload CSV, every row must contain a public HTTPS `Media URL`, an optional `Thumbnail`, a destination `Link`, an ISO `Publish date`, and non-empty comma-separated `Keywords`.
 

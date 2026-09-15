@@ -13,9 +13,9 @@
 
 | Event                  | Trigger                                | Required fields                                 | Verified |
 | ---------------------- | -------------------------------------- | ----------------------------------------------- | -------- |
-| `page_view`            | Any public page loads                  | page path, referrer, UTM values                 | [ ]      |
-| `article_view`         | Article page loads                     | article slug, category                          | [ ]      |
-| `product_click`        | Visitor clicks a product CTA           | product ID, article slug, merchant, position    | [ ]      |
+| `page_view`            | Any public page loads                  | page path, referrer, UTM values                 | [x]      |
+| `article_view`         | Article page loads                     | article slug, category                          | [x]      |
+| `product_click`        | Visitor clicks a product CTA           | product ID, article slug, merchant, position    | [x]      |
 | `affiliate_redirect`   | Tracking endpoint receives request     | product ID, article slug, campaign, destination | [ ]      |
 | `external_destination` | Redirect is completed where measurable | merchant, campaign                              | [ ]      |
 
