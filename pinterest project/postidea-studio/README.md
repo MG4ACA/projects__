@@ -8,7 +8,7 @@ From the repository root:
 
 ```powershell
 python -m pip install -r postidea-studio/requirements.txt
-streamlit run postidea-studio/app.py
+python streamlit run postidea-studio/app.py
 ```
 
 The app stores local workflow data in `postidea-studio/postideas.db`.

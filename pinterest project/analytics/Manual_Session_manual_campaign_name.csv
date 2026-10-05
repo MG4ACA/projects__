@@ -1,0 +1,19 @@
+# ----------------------------------------
+# Manual: Session manual campaign name
+# Account: Default Account 
+# Property: future.lumicore-labs"
+# ----------------------------------------
+# 
+# All Users
+# Start date: 20260906
+# End date: 20261003
+Session manual campaign name,Active users,Sessions,Engaged sessions,Average engagement time per session,Engaged sessions per active user,Events per session,Engagement rate,Key events,Event count,Total revenue
+(not set),8,10,4,5,0.5,3.8,0.4,0,38,0
+v29_pin_17,8,8,4,26.375,0.5,4.25,0.5,0,34,0
+v29_pin_08,7,7,2,1.2857142857142858,0.2857142857142857,4.571428571428571,0.2857142857142857,0,32,0
+v29_pin_01,2,2,0,0,0,3,0,0,6,0
+v29_pin_05,2,3,1,1.6666666666666667,0.5,3.6666666666666665,0.3333333333333333,0,11,0
+v29_pin_03,1,1,1,8,1,6,1,0,6,0
+v29_pin_15,1,1,1,18,1,5,1,0,5,0
+v29_pin_22,1,2,1,17.5,1,6.5,0.5,0,13,0
+v29_pin_24,1,1,1,0,1,4,1,0,4,0
