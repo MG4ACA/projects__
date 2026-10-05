@@ -98,20 +98,26 @@ def fetch_drive_filenames(file_ids, api_key):
 
 FUTURENEST_PAGES = {"off-grid", "tiny-homes", "smart-home", "index", "halloween", "pet-wellness"}
 
+BOARD_LINKS: dict[str, str] = {
+    "Future Living & Off-Grid Tech": "https://future.lumicore-labs.com/off-grid",
+    "Halloween Home Decor & DIY": "https://future.lumicore-labs.com/halloween",
+    "Smart Pet Wellness | Eco-Tech & Quiet Luxury": "https://future.lumicore-labs.com/pet-wellness",
+    "Tiny Homes & Micro Living": "https://future.lumicore-labs.com/tiny-homes",
+    "Smart Home Upgrades": "https://future.lumicore-labs.com/smart-home",
+    "Build. Scale. Ship. — Software Studio": "https://lumicore-labs.com/",
+}
+
 
 def destination_url(board, landing_page):
-    """FutureNest gets Future Living / Halloween / Pet Wellness traffic; Software Studio keeps its own domain."""
+    """Map each Pinterest board to its correct destination URL on Future Nest or Lumicore Labs."""
     if board == "Build. Scale. Ship. — Software Studio":
         return "https://lumicore-labs.com/"
-    if board == "Halloween Home Decor & DIY":
-        return "https://future.lumicore-labs.com/halloween"
-    if board == "Smart Pet Wellness | Eco-Tech & Quiet Luxury":
-        return "https://future.lumicore-labs.com/pet-wellness"
     if board == "Future Living & Off-Grid Tech":
         page = (landing_page or "").strip().lower()
         slug = page if page in FUTURENEST_PAGES else "off-grid"
         return "https://future.lumicore-labs.com/" if slug == "index" else f"https://future.lumicore-labs.com/{slug}"
-    return "https://www.pinterest.com/wildbuild/"
+    # All remaining boards map directly via the lookup table
+    return BOARD_LINKS.get(board, "https://future.lumicore-labs.com/")
 
 
 def export_csv(rows, batch_version, drive_urls):
